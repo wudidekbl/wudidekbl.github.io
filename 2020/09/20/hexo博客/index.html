@@ -234,17 +234,17 @@
 <h1 id="把hexo博客放到github上面"><a href="#把hexo博客放到github上面" class="headerlink" title="把hexo博客放到github上面"></a>把hexo博客放到github上面</h1><p>ssh把本地和github连接</p>
 <p>gitbash输入命令生成密钥</p>
 <blockquote>
-<p>ssh-keygen -t ed25519 -C “<a href="mailto:&#x79;&#x6f;&#117;&#114;&#x5f;&#x65;&#109;&#x61;&#x69;&#x6c;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;">&#x79;&#x6f;&#117;&#114;&#x5f;&#x65;&#109;&#x61;&#x69;&#x6c;&#x40;&#101;&#120;&#x61;&#109;&#x70;&#108;&#x65;&#x2e;&#x63;&#x6f;&#x6d;</a>“</p>
+<p>ssh-keygen -t ed25519 -C “<a href="mailto:&#x79;&#111;&#x75;&#114;&#x5f;&#x65;&#x6d;&#x61;&#x69;&#108;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;">&#x79;&#111;&#x75;&#114;&#x5f;&#x65;&#x6d;&#x61;&#x69;&#108;&#x40;&#x65;&#120;&#x61;&#109;&#112;&#108;&#x65;&#x2e;&#x63;&#111;&#x6d;</a>“</p>
 </blockquote>
 <p>生成的密钥在本地C:\Users\Huawei.ssh文件夹<br><img src="/2020/09/20/hexo%E5%8D%9A%E5%AE%A2/image.png" alt="Alt text"></p>
 <p>在github设置里面把本地密钥添加进去</p>
 <p>可使用如下命令验证上述配置是否成功</p>
 <blockquote>
-<p>ssh -T <a href="mailto:&#103;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;">&#103;&#105;&#x74;&#x40;&#x67;&#105;&#x74;&#x68;&#117;&#x62;&#46;&#99;&#x6f;&#109;</a></p>
+<p>ssh -T <a href="mailto:&#103;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#x6d;">&#103;&#x69;&#x74;&#64;&#103;&#105;&#x74;&#104;&#x75;&#98;&#46;&#x63;&#111;&#x6d;</a></p>
 </blockquote>
 <p>需要在生成的hexo博客文件下面修改配置文件_config.yml</p>
 <blockquote>
-<p>deploy:<br> type: git<br> #你的repositiry名字也就是你的github名字<br> repository: <a href="mailto:&#103;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#109;">&#103;&#105;&#x74;&#64;&#103;&#x69;&#116;&#x68;&#x75;&#98;&#46;&#x63;&#x6f;&#109;</a>:wudidekbl&#x2F;wudidekbl.github.io.git<br> branch: main</p>
+<p>deploy:<br> type: git<br> #你的repositiry名字也就是你的github名字<br> repository: <a href="mailto:&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;">&#x67;&#105;&#116;&#64;&#103;&#x69;&#116;&#104;&#x75;&#x62;&#x2e;&#99;&#x6f;&#x6d;</a>:wudidekbl&#x2F;wudidekbl.github.io.git<br> branch: main</p>
 </blockquote>
 <h1 id="ps-方便引用图片"><a href="#ps-方便引用图片" class="headerlink" title="ps:方便引用图片"></a>ps:方便引用图片</h1><p>同时生成同名文章文件夹,方便放入资源管理<br>在本地的_post文件夹下<br>文件结构</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">|____source</span><br><span class="line">| |_____posts</span><br><span class="line">| | |____测试文章.md</span><br><span class="line">| | |____测试文章 # 与文章同名的目录，用于保存在文章中引入的本地图片资源</span><br></pre></td></tr></table></figure>
