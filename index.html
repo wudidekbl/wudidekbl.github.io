@@ -124,9 +124,13 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">5</span>
           <span class="site-state-item-name">日志</span>
         </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
       </div>
   </nav>
 </div>
@@ -247,7 +251,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/20/hexo%E5%BB%BA%E7%AB%99/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/21/linux%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
@@ -265,7 +269,7 @@
     </span>
       <header class="post-header">
         <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/09/20/hexo%E5%BB%BA%E7%AB%99/" class="post-title-link" itemprop="url">hexo建站</a>
+          <a href="/2020/11/21/linux%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">linux学习</a>
         </h2>
 
         <div class="post-meta-container">
@@ -276,14 +280,14 @@
       </span>
       <span class="post-meta-item-text">发表于</span>
 
-      <time title="创建时间：2020-09-20 20:37:56" itemprop="dateCreated datePublished" datetime="2020-09-20T20:37:56+08:00">2020-09-20</time>
+      <time title="创建时间：2020-11-21 23:07:03" itemprop="dateCreated datePublished" datetime="2020-11-21T23:07:03+08:00">2020-11-21</time>
     </span>
     <span class="post-meta-item">
       <span class="post-meta-item-icon">
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-21 16:56:03" itemprop="dateModified" datetime="2023-09-21T16:56:03+08:00">2023-09-21</time>
+      <time title="修改时间：2023-09-21 23:24:51" itemprop="dateModified" datetime="2023-09-21T23:24:51+08:00">2023-09-21</time>
     </span>
 
   
@@ -293,14 +297,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>620</span>
+      <span>3.3k</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
+      <span>5 分钟</span>
     </span>
 </div>
 
@@ -311,18 +315,237 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h1><p>配置环境</p>
-<h1 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h1><p>gitbash打开,cd到想要想要创建博客的目录下</p>
-<h1 id="hexo搭播客"><a href="#hexo搭播客" class="headerlink" title="hexo搭播客"></a>hexo搭播客</h1><p><img src="/%5Chexo%E5%BB%BA%E7%AB%99%5C87657fc9cf3a1d042d92b472f7bf7d3.png" alt="image1"></p>
-<h1 id="把hexo博客放到github上面"><a href="#把hexo博客放到github上面" class="headerlink" title="把hexo博客放到github上面"></a>把hexo博客放到github上面</h1><p>ssh把本地和github连接</p>
-<p>gitbash输入命令生成密钥<br>$ ssh-keygen -t ed25519 -C “<a href="mailto:&#121;&#111;&#117;&#x72;&#x5f;&#101;&#109;&#97;&#x69;&#108;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;">&#121;&#111;&#117;&#x72;&#x5f;&#101;&#109;&#97;&#x69;&#108;&#x40;&#x65;&#120;&#97;&#x6d;&#112;&#x6c;&#x65;&#x2e;&#99;&#111;&#x6d;</a>“</p>
-<p>生成的密钥在本地C:\Users\Huawei.ssh文件夹</p>
+          <h1 id="linux基础篇"><a href="#linux基础篇" class="headerlink" title="linux基础篇"></a>linux基础篇</h1><ul>
+<li>在linux下部署文件：因为大部分服务器都是linux系统的</li>
+<li>linux在个人桌面上的应用，：乌班图 等<ul>
+<li>在服务器上的应用：后端</li>
+<li>嵌入式</li>
+</ul>
+</li>
+</ul>
+<h1 id="linux学习流程"><a href="#linux学习流程" class="headerlink" title="- linux学习流程"></a>- linux学习流程</h1><pre><code>- 1.文件操作命令，编辑工具使用（vi vim），linux用户管理（useradd，userdel， usermod）
+- 2.各种配置*（环境配置，网络配置，服务配置）
+- 3.如何搭建对应语言的开发环境（大数据，javaee python）
+- 4.能写shell脚本，对linux服务器进行维护
+- 5.进行安全设计，防止攻击
+- 5.能深入linux系统，熟练掌握大型网络应用架构组成，并熟练各个环节的部署和维护方法
+</code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/11/21/linux%E5%AD%A6%E4%B9%A0/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
 
-<p><img src="/image.png" alt="Alt text"></p>
-<p>在github设置里面把本地密钥添加进去</p>
-<p>可使用如下命令验证上述配置是否成功<br>ssh -T <a href="mailto:&#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#64;&#103;&#105;&#x74;&#x68;&#117;&#98;&#46;&#x63;&#111;&#109;</a></p>
-<p>需要在生成的hexo博客文件下面修改配置文件_config.yml<br>deploy:<br>  type: git<br>#你的repositiry名字也就是你的github名字<br>  repository: <a href="mailto:&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;">&#x67;&#x69;&#x74;&#64;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#x6f;&#109;</a>:wudidekbl&#x2F;wudidekbl.github.io.git<br>  branch: main</p>
+    
+    
+    
 
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
+      <meta itemprop="name" content="HWW">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/" class="post-title-link" itemprop="url">vue项目尚品汇商城</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-10-21 22:46:29" itemprop="dateCreated datePublished" datetime="2020-10-21T22:46:29+08:00">2020-10-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-21 23:25:15" itemprop="dateModified" datetime="2023-09-21T23:25:15+08:00">2023-09-21</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>8.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>14 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="尚品汇"><a href="#尚品汇" class="headerlink" title="尚品汇"></a>尚品汇</h1><ul>
+<li>创建项目不能用大写 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-330721-884799.jpg" alt="图片"></li>
+<li>vue init webpack 项目名也是创建出来的是vue2版本</li>
+<li>选择vue2的版本 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-963937-775810.jpg" alt="图片"></li>
+<li>创建好package.json会有报错但是能远行是开了vpn代理的问题 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-656-177782.jpg" alt="图片"></li>
+<li>对项目文件的作用 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-893029-584346.jpg" alt="图片"></li>
+<li>远行项目npm run serve 让浏览器自动打开（在package.json文件里面配置open <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-578194-398261.jpg" alt="图片"></li></ul>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/21/sql%E6%B3%A8%E5%85%A5/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
+      <meta itemprop="name" content="HWW">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2020/09/21/sql%E6%B3%A8%E5%85%A5/" class="post-title-link" itemprop="url">sql注入</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-09-21 22:17:49" itemprop="dateCreated datePublished" datetime="2020-09-21T22:17:49+08:00">2020-09-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-21 23:25:27" itemprop="dateModified" datetime="2023-09-21T23:25:27+08:00">2023-09-21</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1.8k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>3 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <h1 id="表单get-post注入"><a href="#表单get-post注入" class="headerlink" title="表单get,post注入"></a>表单get,post注入</h1><pre><code> 字符型注入
+    字符型注入类型
+    ![fajf](sql)
+    判断是字符型注入还是数值型注入
+        ?id=1&#39; 如果是字符型,不会报错,如果是数字型则报错,下列是报错
+        and结果为假不出结果,数值字符型报错不出结果
+</code></pre>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/21/sql%E6%B3%A8%E5%85%A5/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -384,7 +607,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-21 21:13:04" itemprop="dateModified" datetime="2023-09-21T21:13:04+08:00">2023-09-21</time>
+      <time title="修改时间：2023-09-21 23:25:25" itemprop="dateModified" datetime="2023-09-21T23:25:25+08:00">2023-09-21</time>
     </span>
 
   
@@ -394,7 +617,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>622</span>
+      <span>855</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -412,18 +635,18 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          <h1 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h1><p>配置环境</p>
-<h1 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h1><p>gitbash打开,cd到想要想要创建博客的目录下</p>
-<h1 id="hexo搭播客"><a href="#hexo搭播客" class="headerlink" title="hexo搭播客"></a>hexo搭播客</h1><p><img src="/.com//%5Chexo%E5%BB%BA%E7%AB%99%5C87657fc9cf3a1d042d92b472f7bf7d3.png" alt="image1"></p>
-<h1 id="把hexo博客放到github上面"><a href="#把hexo博客放到github上面" class="headerlink" title="把hexo博客放到github上面"></a>把hexo博客放到github上面</h1><p>ssh把本地和github连接</p>
-<p>gitbash输入命令生成密钥<br>$ ssh-keygen -t ed25519 -C “<a href="mailto:&#121;&#x6f;&#x75;&#x72;&#x5f;&#101;&#x6d;&#x61;&#105;&#x6c;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#99;&#x6f;&#x6d;">&#121;&#x6f;&#x75;&#x72;&#x5f;&#101;&#x6d;&#x61;&#105;&#x6c;&#64;&#x65;&#x78;&#x61;&#x6d;&#x70;&#108;&#101;&#46;&#99;&#x6f;&#x6d;</a>“</p>
-<p>生成的密钥在本地C:\Users\Huawei.ssh文件夹</p>
-<img src="/.com//09/20/hexo%E5%8D%9A%E5%AE%A2/image.png" class title="This is an example image">
-<p><img src="/.com//image.png" alt="Alt text"></p>
-<p>在github设置里面把本地密钥添加进去</p>
-<p>可使用如下命令验证上述配置是否成功<br>ssh -T <a href="mailto:&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#109;">&#103;&#x69;&#116;&#x40;&#103;&#105;&#116;&#x68;&#x75;&#x62;&#x2e;&#x63;&#111;&#109;</a></p>
-<p>需要在生成的hexo博客文件下面修改配置文件_config.yml<br>deploy:<br>  type: git<br>#你的repositiry名字也就是你的github名字<br>  repository: <a href="mailto:&#x67;&#105;&#116;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;">&#x67;&#105;&#116;&#64;&#x67;&#x69;&#x74;&#104;&#x75;&#x62;&#x2e;&#99;&#111;&#x6d;</a>:wudidekbl&#x2F;wudidekbl.github.io.git<br>  branch: main</p>
-
+          <h1 id="node安装"><a href="#node安装" class="headerlink" title="node安装"></a>node安装</h1><hr>
+<p>配置环境</p>
+<h1 id="git安装"><a href="#git安装" class="headerlink" title="git安装"></a>git安装</h1><hr>
+<p>gitbash打开,cd到想要想要创建博客的目录下</p>
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2020/09/20/hexo%E5%8D%9A%E5%AE%A2/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -461,13 +684,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">2k</span>
+    <span title="站点总字数">14k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">3 分钟</span>
+    <span title="站点阅读时长">24 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动

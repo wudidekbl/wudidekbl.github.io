@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="linux基础篇 在linux下部署文件：因为大部分服务器都是linux系统的 linux在个人桌面上的应用，：乌班图 等 在服务器上的应用：后端 嵌入式    - linux学习流程- 1.文件操作命令，编辑工具使用（vi vim），linux用户管理（useradd，userdel， usermod） - 2.各种配置*（环境配置，网络配置，服务配置） - 3.如何搭建对应语言的开发环境（大数">
+<meta property="og:type" content="article">
+<meta property="og:title" content="linux学习">
+<meta property="og:url" content="http://example.com/2020/11/21/linux%E5%AD%A6%E4%B9%A0/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="linux基础篇 在linux下部署文件：因为大部分服务器都是linux系统的 linux在个人桌面上的应用，：乌班图 等 在服务器上的应用：后端 嵌入式    - linux学习流程- 1.文件操作命令，编辑工具使用（vi vim），linux用户管理（useradd，userdel， usermod） - 2.各种配置*（环境配置，网络配置，服务配置） - 3.如何搭建对应语言的开发环境（大数">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-11-21T15:07:03.000Z">
+<meta property="article:modified_time" content="2023-09-21T15:24:51.468Z">
+<meta property="article:author" content="HWW">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2020/11/21/linux%E5%AD%A6%E4%B9%A0/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2020/11/21/linux%E5%AD%A6%E4%B9%A0/","path":"2020/11/21/linux学习/","title":"linux学习"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>linux学习 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Do not go gentle into that good night</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E5%9F%BA%E7%A1%80%E7%AF%87"><span class="nav-number">1.</span> <span class="nav-text">linux基础篇</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E5%AD%A6%E4%B9%A0%E6%B5%81%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">- linux学习流程</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E5%86%85%E6%A0%B8%EF%BC%8C%E4%B8%8D%E5%90%8C%E5%8E%82%E5%95%86%E5%AF%B9%E4%BB%96%E4%BA%8C%E6%AC%A1%E5%BC%80%E5%8F%91%E5%87%BA%E7%8E%B0%E4%BA%86%E4%B8%8D%E5%90%8C%E7%9A%84%E5%8F%91%E8%A1%8C%E7%89%88%E6%9C%AC%EF%BC%9A"><span class="nav-number">3.</span> <span class="nav-text">- linux内核，不同厂商对他二次开发出现了不同的发行版本：</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%99%9A%E6%8B%9F%E6%9C%BA%E8%AE%BE%E7%BD%AE"><span class="nav-number">4.</span> <span class="nav-text">- 虚拟机设置</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#vim-%E6%98%AFvi%E7%9A%84%E5%8D%87%E7%BA%A7%E7%89%88%EF%BC%8C%E6%98%AFlinux%E5%86%85%E7%BD%AE%E7%9A%84%E6%96%87%E6%9C%AC%E7%BC%96%E8%BE%91%E5%99%A8"><span class="nav-number">5.</span> <span class="nav-text">- vim 是vi的升级版，是linux内置的文本编辑器</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#xshell%E5%85%B3%E6%9C%BA%E9%87%8D%E5%90%AF%E5%91%BD%E4%BB%A4"><span class="nav-number">6.</span> <span class="nav-text">- xshell关机重启命令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E7%94%A8%E6%88%B7%E7%AE%A1%E7%90%86"><span class="nav-number">7.</span> <span class="nav-text">- linux用户管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%BB%84%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">- 用户组的管理</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E5%92%8C%E7%BB%84%E7%9A%84%E7%9A%84%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6"><span class="nav-number">9.</span> <span class="nav-text">- 用户和组的的配置文件</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#linux%E7%B3%BB%E7%BB%9F%E7%9A%84%E8%BF%9C%E8%A1%8C%E7%BA%A7%E5%88%AB"><span class="nav-number">10.</span> <span class="nav-text">- linux系统的远行级别</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B8%AE%E5%8A%A9%E6%8C%87%E4%BB%A4"><span class="nav-number">11.</span> <span class="nav-text">- 帮助指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E7%9B%AE%E5%BD%95%E7%B1%BB%E6%8C%87%E4%BB%A4"><span class="nav-number">12.</span> <span class="nav-text">- 文件目录类指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%97%B6%E9%97%B4%E6%97%A5%E6%9C%9F%E7%B1%BB%E6%8C%87%E4%BB%A4"><span class="nav-number">13.</span> <span class="nav-text">- 时间日期类指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E6%90%9C%E7%B4%A2%E7%B1%BB%E6%8C%87%E4%BB%A4"><span class="nav-number">14.</span> <span class="nav-text">- 查找搜索类指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%8E%8B%E7%BC%A9%E8%A7%A3%E5%8E%8B%E6%8C%87%E4%BB%A4"><span class="nav-number">15.</span> <span class="nav-text">- 压缩解压指令</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%94%B9%E5%8F%98%E7%94%A8%E6%88%B7%E6%89%80%E6%9C%89%E8%80%85%EF%BC%8C%E6%89%80%E6%9C%89%E7%BB%84%EF%BC%8C"><span class="nav-number">16.</span> <span class="nav-text">- 改变用户所有者，所有组，</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9D%83%E9%99%90%E7%9A%84%E7%AE%A1%E7%90%86"><span class="nav-number">17.</span> <span class="nav-text">- 权限的管理</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="HWW"
+      src="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
+  <p class="site-author-name" itemprop="name">HWW</p>
+  <div class="site-description" itemprop="description">Do not go gentle into that good night</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/21/linux%E5%AD%A6%E4%B9%A0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
+      <meta itemprop="name" content="HWW">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="linux学习 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          linux学习
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-11-21 23:07:03" itemprop="dateCreated datePublished" datetime="2020-11-21T23:07:03+08:00">2020-11-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-21 23:24:51" itemprop="dateModified" datetime="2023-09-21T23:24:51+08:00">2023-09-21</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>3.3k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>5 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="linux基础篇"><a href="#linux基础篇" class="headerlink" title="linux基础篇"></a>linux基础篇</h1><ul>
+<li>在linux下部署文件：因为大部分服务器都是linux系统的</li>
+<li>linux在个人桌面上的应用，：乌班图 等<ul>
+<li>在服务器上的应用：后端</li>
+<li>嵌入式</li>
+</ul>
+</li>
+</ul>
+<h1 id="linux学习流程"><a href="#linux学习流程" class="headerlink" title="- linux学习流程"></a>- linux学习流程</h1><pre><code>- 1.文件操作命令，编辑工具使用（vi vim），linux用户管理（useradd，userdel， usermod）
+- 2.各种配置*（环境配置，网络配置，服务配置）
+- 3.如何搭建对应语言的开发环境（大数据，javaee python）
+- 4.能写shell脚本，对linux服务器进行维护
+- 5.进行安全设计，防止攻击
+- 5.能深入linux系统，熟练掌握大型网络应用架构组成，并熟练各个环节的部署和维护方法
+</code></pre>
+<span id="more"></span>
+<h1 id="linux内核，不同厂商对他二次开发出现了不同的发行版本："><a href="#linux内核，不同厂商对他二次开发出现了不同的发行版本：" class="headerlink" title="- linux内核，不同厂商对他二次开发出现了不同的发行版本："></a>- linux内核，不同厂商对他二次开发出现了不同的发行版本：</h1><pre><code>- redhat
+    - centose
+    - redhat
+- ubuntu
+- suse
+- 红旗linux
+- kali
+</code></pre>
+<ul>
+<li>用户软件层——shell层-——操作系统层unix&#x2F;linux——硬件层</li>
+</ul>
+<h1 id="虚拟机设置"><a href="#虚拟机设置" class="headerlink" title="- 虚拟机设置"></a>- 虚拟机设置</h1><pre><code>- 网络适配器设置 ：NAT模式，不占用外网网址，可以和外网通信，桥接模式：占用外网网址
+</code></pre>
+<h1 id="vim-是vi的升级版，是linux内置的文本编辑器"><a href="#vim-是vi的升级版，是linux内置的文本编辑器" class="headerlink" title="- vim 是vi的升级版，是linux内置的文本编辑器"></a>- vim 是vi的升级版，是linux内置的文本编辑器</h1><pre><code>- vim hello.java 会创建一个文件和进入这个文件，按i开始插入，按esc是退出插入，退出插入按:  输入wq是写入保存并退出文件，q是退出文件
+- 在esc模式下，按yy是复制所在光标行，5dd是复制光标下的5行，dd删除，；查找文字 按/hello 就是查找文档中hello的文字。；设置文字 行号。：set nu 取消文字行号 ：set nonu
+- 
+</code></pre>
+<h1 id="xshell关机重启命令"><a href="#xshell关机重启命令" class="headerlink" title="- xshell关机重启命令"></a>- xshell关机重启命令</h1><pre><code>- shutdown
+    - shutdown -h now 立刻关机
+    - shutdown -h 1 一分钟后关机
+    - shutdown -r now 立即重启
+- halt 关机
+- reboot 重启
+- syn 吧内存的数据存到磁盘，注意，在关机之前执行syn防止没有保存的数据消失
+- logout用户注销，不在占有这个连接
+</code></pre>
+<h1 id="linux用户管理"><a href="#linux用户管理" class="headerlink" title="- linux用户管理"></a>- linux用户管理</h1><pre><code>- useradd  【 用户名】 添加用户
+- useradd -d 目录名  用户名  指定到用户创建到哪个目录下
+- su 用户名  切换用户，高权限切换到低权限不需要输入密码，
+- whoami 查看当前用户是谁 ![图片](./linux基础篇-幕布图片-711177-939205.jpg)
+- cd 目录名 change dir
+- passwd 用户名    给用户修改创建密码 root下
+- userdel 用户名 删除用户  root下
+- userdel -r 用户名 删除用户同时和他的家目录
+- id 用户名 ![图片](./linux基础篇-幕布图片-44732-615196.jpg)
+</code></pre>
+<h1 id="用户组的管理"><a href="#用户组的管理" class="headerlink" title="- 用户组的管理"></a>- 用户组的管理</h1><pre><code>- 类似与角色，系统可以对有共性的用户进行管理
+- groupadd  组名
+- groupdel 组名 删除组
+- useradd -g 用户组 用户名 创建用户和指定他的组 ![图片](./linux基础篇-幕布图片-666466-73203.jpg)
+- usermod -g 用户组 用户名 修改用户的组
+</code></pre>
+<h1 id="用户和组的的配置文件"><a href="#用户和组的的配置文件" class="headerlink" title="- 用户和组的的配置文件"></a>- 用户和组的的配置文件</h1><pre><code>- 用户配置文件,/etc/passwd(用户信息）依次是：用户名，用户密码，用户id，组id，家目录，对应shell解释器 ![图片](./linux基础篇-幕布图片-716772-786888.jpg)
+- 组配置文件，（组的信息）/etc/group
+- 口令配置文件（密码和登录信息 ，是加密的）/etc/shadow
+</code></pre>
+<h1 id="linux系统的远行级别"><a href="#linux系统的远行级别" class="headerlink" title="- linux系统的远行级别"></a>- linux系统的远行级别</h1><pre><code>- 系统远行级别配置文件/usr/lib/sytemd/system/
+- 0关机
+- 1单用户（找回密码）
+- 2.多用户无网络
+- 3多用户有网络
+- 4保留
+- 5图形化界面
+- 6重启
+- 切换不同运行级别init 级号：：：
+</code></pre>
+<h1 id="帮助指令"><a href="#帮助指令" class="headerlink" title="- 帮助指令"></a>- 帮助指令</h1><pre><code>- man 命令或者配置文件 man ls
+- help 命令  help cd
+</code></pre>
+<h1 id="文件目录类指令"><a href="#文件目录类指令" class="headerlink" title="- 文件目录类指令"></a>- 文件目录类指令</h1><pre><code>- ls 显示文件 -l 列表形式显示加上权限信息，-a所有的都显示，包括隐藏的
+- cd 回到自己家目录，cd  ../回到上一级
+- mkdir 指令用于创建目录
+- mkdir -p 可以创建多级目录不存在的多级目录，
+- vim 文件名 创建并进入这个文件
+- touch 文件名  创建一个文件，但是不进入他（一次性创建多个文件可以）
+- cp 选项  source  dest   拷贝指定文件到指定目录
+- cp -r  可以复制整个目录过去 \cp -r 强制覆盖不会提示有相同文件了
+- pwd 显示当前位置在哪个目录
+- 上下键可以调出之前使用的指令
+- rm移除文件或目录 -r 递归删除，-f 强制删除不提示
+- rmdir 删除空目录，不能删目录里面有内容的目录
+- rm -rf  可以删除目录里面有内容的目录
+- mv 移动文件，与目录 或重命名 ，如果就是在当前目录中就是重命名
+- cat 以只读的方式查看文件，不能修改-n 显示行号cat  -n 文件 | more 以全屏的方式按页显示文本文件内容
+- more 指令 查看文件
+- less 用来查看较大的文件，先加载一份分显示
+- 指令&gt;输出重定向 和&gt;&gt;追加
+- &gt; ls-l &gt;a.tex 把列表的内容写入文件a.txt中（覆盖） ls -al &gt;&gt;a.txt 把列表i内容追加到a.txt的末尾 文件1&gt;文件二 把文件1内容写入到文件2（覆盖 echo “字符” &gt;&gt; 文件1 把字符追加到文件1中
+- echo 输入内容，输出内容到控制台。echo $PATH echo “hellowordl”
+- head -n 5 文件 显示文件前5行
+- tail -n 5 显示文件尾部后5行 tail -f 文件 实时追踪该文档的更新
+- ln -s 源文件或者目录  软连接名  ln -s  /root  linkroot   cd linkroot就会到root目录，rm -rf linkroot 删除软链接
+- history指令，查看已经执行的指令的历史  ;   !15执行历史编号为15的指令
+</code></pre>
+<h1 id="时间日期类指令"><a href="#时间日期类指令" class="headerlink" title="- 时间日期类指令"></a>- 时间日期类指令</h1><pre><code>- date 显示当前时间
+- date +%Y
+- date +%m
+- date +%d
+- date +%Y年%m月%d日%H时%M分%S
+- date -s +2020-11-1+11:22:10设置时间和日期
+- cal以日历的方式显示 cal 2020 显示2020的1-12月日历 ![图片](./linux基础篇-幕布图片-731903-478896.jpg)
+</code></pre>
+<h1 id="查找搜索类指令"><a href="#查找搜索类指令" class="headerlink" title="- 查找搜索类指令"></a>- 查找搜索类指令</h1><pre><code>- find 查找范围 选项 文件   find /home -name hello.java
+- -user  hww按文件用户
+- find /  -size  +20 查找大于20m的文件 -20就是小于20m的
+- locate指令 快速定位文件路径，第一次远行locate必须要使用updatedb指令创建locate数据库
+- grep指令过滤查找，管道符|  表示将前一个命令的处理结果输出传递给后面的命令处理
+- 显示hello.txt 里面的内容里的yes出来 cat helllo.txt | grep -n yes
+</code></pre>
+<h1 id="压缩解压指令"><a href="#压缩解压指令" class="headerlink" title="- 压缩解压指令"></a>- 压缩解压指令</h1><pre><code>- gunzip 解压
+- gzip压缩 使用gzip压缩，不会保留原来的文件，原来的文件变成压缩文件
+- unzip -d  想要压缩到的目录 想要压缩的文件； 指定解压后的文件放在哪里
+- zip -r 取得解压名  想要压缩的文件；zip后缀
+- tar既能解压又能压缩 tar后缀
+</code></pre>
+<h1 id="改变用户所有者，所有组，"><a href="#改变用户所有者，所有组，" class="headerlink" title="- 改变用户所有者，所有组，"></a>- 改变用户所有者，所有组，</h1><pre><code>- ls -ahl 显示用户的的所有者和所有组
+- chgrp 组名 文件名    ；改变文件所在组
+- usermod -g 新组  原来组  ； 改变用户所有组
+- 
+</code></pre>
+<h1 id="权限的管理"><a href="#权限的管理" class="headerlink" title="- 权限的管理"></a>- 权限的管理</h1><pre><code>- 第一 个 -是普通文件，d是目录文件，c是设备文件
+- 第二组 3个 rwx 所有者权限，第二组 rwx所有组权限，第三组rwx 其他组权限后面的数字是 文件是硬链接的个数，目录是子目录的个数
+- chmod u=rwx，g=rwx ，o=rwx  文件名字 修改文件权限
+- chmod u+w g-x
+- r=4 w=2 x=1
+- chmod 755 abc.txt
+- chown newowner 文件名  改变文件所有者
+- chown newowner:newgroup 文件名 改变文件所有者和所有组 -R如果是目录，则目录下的子文件和目录都生效
+- chown -R tom kkk  将kkk目录下的子文件的所有者都改成tom
+- 如果一个目录的权限没有开放给其他组，那么别的用户就无法cd到该目录也要开启x执行权限不然无法执行cd指令
+</code></pre>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><script src="//sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
+<script>
+  jinrishici.load((result) => {
+    let jrsc = document.getElementById('jrsc');
+    const data = result.data;
+    let author = data.origin.author;
+    let title = '《' + data.origin.title + '》';
+    let content = data.content.substr(0, data.content.length - 1);
+    let dynasty = data.origin.dynasty.substr(0, data.origin.dynasty.length - 1);
+    jrsc.innerText = content + ' @ ' + dynasty + '·' + author + title;
+  });
+</script>
+<div style="text-align: center"><span id="jrsc" >正在加载今日诗词....</span></div>
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/" rel="prev" title="vue项目尚品汇商城">
+                  <i class="fa fa-angle-left"></i> vue项目尚品汇商城
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2023/09/21/hello-world/" rel="next" title="Hello World">
+                  Hello World <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">HWW</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">14k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">24 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>

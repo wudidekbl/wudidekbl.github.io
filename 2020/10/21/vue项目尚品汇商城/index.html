@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222"><meta name="generator" content="Hexo 6.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" integrity="sha256-HtsXJanqjKTc8vVQjO4YMhiqFoXkfBsjBWcX91T1jr8=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
+
+    <meta name="description" content="尚品汇 创建项目不能用大写  vue init webpack 项目名也是创建出来的是vue2版本 选择vue2的版本  创建好package.json会有报错但是能远行是开了vpn代理的问题  对项目文件的作用  远行项目npm run serve 让浏览器自动打开（在package.json文件里面配置open">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue项目尚品汇商城">
+<meta property="og:url" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="尚品汇 创建项目不能用大写  vue init webpack 项目名也是创建出来的是vue2版本 选择vue2的版本  创建好package.json会有报错但是能远行是开了vpn代理的问题  对项目文件的作用  远行项目npm run serve 让浏览器自动打开（在package.json文件里面配置open">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-330721-884799.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-963937-775810.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-656-177782.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-893029-584346.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-578194-398261.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-853639-700037.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-22952-298187.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-174629-216121.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-81529-387041.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-396991-740892.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-935242-9515.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-146166-926841.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-495373-401.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-418273-71234.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-192395-287495.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-53131-82759.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-632035-421241.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-739206-922409.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-26668-708364.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-695744-764480.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-354616-97225.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-180954-410239.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-231489-349860.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-580691-618893.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-517200-944085.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-651455-348140.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-138833-712294.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-818429-863256.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-560130-144986.jpg">
+<meta property="og:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-527623-670122.jpg">
+<meta property="article:published_time" content="2020-10-21T14:46:29.000Z">
+<meta property="article:modified_time" content="2023-09-21T15:25:15.637Z">
+<meta property="article:author" content="HWW">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-330721-884799.jpg">
+
+
+<link rel="canonical" href="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/">
+
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/","path":"2020/10/21/vue项目尚品汇商城/","title":"vue项目尚品汇商城"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>vue项目尚品汇商城 | Hexo</title>
+  
+
+
+
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+        <span class="toggle-line"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">Hexo</p>
+      <i class="logo-line"></i>
+    </a>
+      <p class="site-subtitle" itemprop="description">Do not go gentle into that good night</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+<nav class="site-nav">
+  <ul class="main-menu menu"><li class="menu-item menu-item-home"><a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a></li><li class="menu-item menu-item-about"><a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a></li><li class="menu-item menu-item-tags"><a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a></li><li class="menu-item menu-item-categories"><a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a></li><li class="menu-item menu-item-archives"><a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a></li><li class="menu-item menu-item-schedule"><a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a></li>
+  </ul>
+</nav>
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%B0%9A%E5%93%81%E6%B1%87"><span class="nav-number">1.</span> <span class="nav-text">尚品汇</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="HWW"
+      src="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
+  <p class="site-author-name" itemprop="name">HWW</p>
+  <div class="site-description" itemprop="description">Do not go gentle into that good night</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">5</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
+      <meta itemprop="name" content="HWW">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="vue项目尚品汇商城 | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          vue项目尚品汇商城
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+
+      <time title="创建时间：2020-10-21 22:46:29" itemprop="dateCreated datePublished" datetime="2020-10-21T22:46:29+08:00">2020-10-21</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar-check"></i>
+      </span>
+      <span class="post-meta-item-text">更新于</span>
+      <time title="修改时间：2023-09-21 23:25:15" itemprop="dateModified" datetime="2023-09-21T23:25:15+08:00">2023-09-21</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>8.2k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>14 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h1 id="尚品汇"><a href="#尚品汇" class="headerlink" title="尚品汇"></a>尚品汇</h1><ul>
+<li>创建项目不能用大写 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-330721-884799.jpg" alt="图片"></li>
+<li>vue init webpack 项目名也是创建出来的是vue2版本</li>
+<li>选择vue2的版本 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-963937-775810.jpg" alt="图片"></li>
+<li>创建好package.json会有报错但是能远行是开了vpn代理的问题 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-656-177782.jpg" alt="图片"></li>
+<li>对项目文件的作用 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-893029-584346.jpg" alt="图片"></li>
+<li>远行项目npm run serve 让浏览器自动打开（在package.json文件里面配置open <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-578194-398261.jpg" alt="图片"><span id="more"></span></li>
+<li>vue-cli 5.x 版本 使用–open 时，默认打开浏览器，会出现0.0.0.0:8080 ，解决办法 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-853639-700037.jpg" alt="图片"></li>
+<li>eslint校验功能关闭， <code>在vue.config.js里面配置lintOnSave: true,</code> <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-22952-298187.jpg" alt="图片"></li>
+<li>@代表src文件 ，现在新版本vue已经给配置好了 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-174629-216121.jpg" alt="图片"></li>
+<li>home组件的less导入和使用</li>
+<li><blockquote>
+<p>使用npm install less less-loader@6 –save进行安装 添加 在<style></style>中添加lang&#x3D;less <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-81529-387041.jpg" alt="图片"></p>
+</blockquote>
+</li>
+<li>在index.html中导入清楚默认样式reset.css</li>
+<li><blockquote>
+<p>但是把reset.css放在assets总不知道为什么没用 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-396991-740892.jpg" alt="图片"> <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-935242-9515.jpg" alt="图片"></p>
+</blockquote>
+</li>
+<li>安装路由插件vue-router（由于3版本支持vue2所以安装3版本）需要main.js文件中导入router和注册router <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-146166-926841.jpg" alt="图片"> <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-495373-401.jpg" alt="图片"></li>
+<li>搭建路由</li>
+<li><blockquote>
+<p>路由搭建之后要有一个出口<router-view></router-view> ​ <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-418273-71234.jpg" alt="图片"></p>
+</blockquote>
+</li>
+<li>路由跳转（声明式路由和编程试路由） <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-192395-287495.jpg" alt="图片"></li>
+<li>Footer组件的显示与隐藏</li>
+<li><blockquote>
+<Footer v-show="$router.path='/home'||$router.path='/search'"> ![图片](./尚品汇-幕布图片-822411-453562.jpg)</Footer></blockquote>
+</li>
+<li>路由元信息（用来简化Footer组件的显示隐藏</li>
+<li><blockquote>
+<Footer v-show="$router.meta.show">来控制显示隐藏 ![图片](./尚品汇-幕布图片-821869-747382.jpg)</Footer></blockquote>
+</li>
+<li>组件中name的作用 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-53131-82759.jpg" alt="图片"> <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-632035-421241.jpg" alt="图片"></li>
+<li>三种路由之间传参方式 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-739206-922409.jpg" alt="图片"></li>
+<li>重写push和replace方法（针对于多次点击路由跳转会报错的问题）因为push会返回一个promise，他有一个成功的回调和失败的回调，如果多次点就是传参失败，但是我们又没有写失败的回调，所以会报错，所以要对push的进行重写 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-26668-708364.jpg" alt="图片"> <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-695744-764480.jpg" alt="图片"></li>
+</ul>
+<h1 id="组件的分类"><a href="#组件的分类" class="headerlink" title="组件的分类"></a>组件的分类</h1><pre><code>- 路由组件（在page，view文件夹中的组件，在router.js中注册的组件）
+- 路由组件的小子组件
+- 非路由组件header.vue footer.vue（在App.vue中注册和引用和使用）（放在component文件夹中） ![图片](./尚品汇-幕布图片-820847-20846.jpg)
+- 全局组件TypeNav.vue(三级联动）（在main.js中引入组件和注册全局组件）可以被所有组件使用不需要注册和引入（放在component文件夹中） ![图片](./尚品汇-幕布图片-419436-899921.jpg)
+</code></pre>
+<h1 id="对外暴露axios进行二次封装（npm-install-axios）"><a href="#对外暴露axios进行二次封装（npm-install-axios）" class="headerlink" title="对外暴露axios进行二次封装（npm install axios）"></a>对外暴露axios进行二次封装（npm install axios）</h1><h1 id="3"><a href="#3" class="headerlink" title="3"></a>3</h1><pre><code>- 在api文件夹中建立request.js文件进行二次封装 ![图片](./尚品汇-幕布图片-823873-863018.jpg) ![图片](./尚品汇-幕布图片-439586-426579.jpg)
+- 在api建立index.js文件进行API统一管理 ![图片](./尚品汇-幕布图片-861344-678982.jpg)
+</code></pre>
+<h1 id="api接口管理配置文件vue-config-js修改则需要重新npm-run-serve运行一下"><a href="#api接口管理配置文件vue-config-js修改则需要重新npm-run-serve运行一下" class="headerlink" title="- api接口管理配置文件vue.config.js修改则需要重新npm run serve运行一下"></a>- api接口管理配置文件vue.config.js修改则需要重新npm run serve运行一下</h1><pre><code>- 跨域问题
+- &gt; 服务器与服务器之间没有跨域问题，但是前端项目服务器和服务器之间有一个浏览器所以存在跨域问题 ​ ![图片](./尚品汇-幕布图片-432400-177155.jpg)
+- 在vue.config.js里面配置devServer(代理跨域)可以处理跨域问题还有JSONP，CROS，代理都可以处理跨域问题
+    - 列：代理跨域（target里面是要获取数据的服务器地址）&#39;/api&#39;的意思是发送请求网址路径后面带有api字段就去代理服务器找后台服务器要数据，没有带api不会找 ![图片](./尚品汇-幕布图片-910379-73461.jpg)
+</code></pre>
+<h1 id="nprogress进度条插件（axios，nprogress是一个库所以不用use，如果属于vue的插件使用use比如vue-router"><a href="#nprogress进度条插件（axios，nprogress是一个库所以不用use，如果属于vue的插件使用use比如vue-router" class="headerlink" title="- nprogress进度条插件（axios，nprogress是一个库所以不用use，如果属于vue的插件使用use比如vue-router"></a>- nprogress进度条插件（axios，nprogress是一个库所以不用use，如果属于vue的插件使用use比如vue-router</h1><pre><code>- npm install --save nprogress进度条在响应拦截器中使用 ![图片](./尚品汇-幕布图片-688367-213410.jpg)
+</code></pre>
+<ul>
+<li>vuex状态管理库，集中式管理项目中组件共用数据vuex3.6.2使用vue2版本的 ，直接install vuex是安装不了的，因为默认安装最新的vuex是4版本，所以安装不上，<ul>
+<li>因为这个项目是vue2版本的intall vuex@3 –save安装</li>
+<li>创建store文件夹</li>
+<li>vuex属于vue的插件用use使用＋导入vue <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-354616-97225.jpg" alt="图片"></li>
+<li>需要在main.js文件中导入store和注册store组件 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-180954-410239.jpg" alt="图片"></li>
+<li>使用store里面的数据（mapState）</li>
+<li><blockquote>
+<p>如果要获取store里面的state的city属性。 ​首先来看看没有使用mapState的情况, ​ 再来看看使用mapState后 </p>
+</blockquote>
+<ul>
+<li>注意mapState和mapGetters是映射在计算属性里面的，</li>
+<li>而mapActions和mapMutations是映射在methods里面的</li>
+<li>dispatch用法和commit用法</li>
+<li><blockquote>
+<p>this.$store.dispatch 分发 actions-&gt; 调用 mutations-&gt;改变 states ​commit 调用的是 vuex 中 mutation 里的方法，直接改变states</p>
+</blockquote>
+</li>
+<li>和action和和mutation之间的关系</li>
+<li><blockquote>
+<p>1.组件要使用库的数据 2.组件派发方法到库处理 ​ <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-231489-349860.jpg" alt="图片"> <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-580691-618893.jpg" alt="图片"></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>vuex模块式开发，数据分别存放在为每个组件建立的小仓库中 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-517200-944085.jpg" alt="图片"></li>
+</ul>
+</li>
+</ul>
+<h1 id="异步编程：Promise-async-await"><a href="#异步编程：Promise-async-await" class="headerlink" title="- 异步编程：Promise, async, await"></a>- 异步编程：Promise, async, await</h1><pre><code>- 回调函数：一个函数被当成参数传给另一个函数
+- Promise就是一个承诺，承诺在未来某个时刻返回数据
+- 在函数前面加了async就是异步函数，fetch用于发送网络请求也是异步函数
+- 异步函数就是指返回值为Prommise对象的函数
+- await用于接收一个异步方法执行完成后返回的数据
+</code></pre>
+<h1 id="动态展示三级联动"><a href="#动态展示三级联动" class="headerlink" title="- 动态展示三级联动"></a>- 动态展示三级联动</h1><pre><code>- 在接口统一管理中写所要请求的地址 ![图片](./尚品汇-幕布图片-245196-71885.jpg)
+- 在TypeNav.vue组件中挂载请求，在外派出去到仓库 ![图片](./尚品汇-幕布图片-892577-416544.jpg)
+- home仓库发起数据请求存储 ![图片](./尚品汇-幕布图片-533031-503363.jpg)
+- hone大仓库已经拿到数据之后，现在要在组件中引入这些数据来使用mapState来把大仓库的数据映射到组件使用 ![图片](./尚品汇-幕布图片-666338-85902.jpg)
+- 组件请求拿数据流程（三联环）
+    - 1.组件通过veux发送ajax请求：dispatch派发cateforyList方法去仓库里面的actoion里面找这个方法，这个方法可以请求数据在把数据放大这个仓库里面（仓库得到数据）
+    - 2.组件在通过mapstate把仓库里面的数据映射到组件里面使用，...mapstate里面的categoryList方法就是返回仓库里面的数据
+- 循环导入三级菜单 ![图片](./尚品汇-幕布图片-720431-679693.jpg)
+</code></pre>
+<h1 id="节流和防抖"><a href="#节流和防抖" class="headerlink" title="- 节流和防抖 "></a>- 节流和防抖 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-651455-348140.jpg" alt="图片"></h1><pre><code>- 卡顿现象 ![图片](./尚品汇-幕布图片-632673-91500.jpg)
+- 对三级路由进行防抖（引入lodash插件，进行防抖操作 ![图片](./尚品汇-幕布图片-880095-449864.jpg)
+    - changIndex : throttle ( function ( index )&#123;
+    - this . currentIndex = index ;
+    - &#125;, 50 ),
+    - changIndex : throttle ( function ( index )&#123;
+    - this . currentIndex = index ;
+    - &#125;, 50 ),
+    - npm install lodash --save lodash插件里面集合了节流和防抖功能
+    - &gt; 导入improt  throttle  from &quot;lodash&quot;
+    -  ![图片](./尚品汇-幕布图片-109688-39088.jpg)
+</code></pre>
+<h1 id="三级联动组件的路由跳转与传递参数"><a href="#三级联动组件的路由跳转与传递参数" class="headerlink" title="- 三级联动组件的路由跳转与传递参数"></a>- 三级联动组件的路由跳转与传递参数</h1><pre><code>- 路由跳转 ![图片](./尚品汇-幕布图片-303029-530989.jpg)
+    - 声明式导航router-link
+    - &gt; 产生很多个路由，会卡顿，浪费资源
+    - 编程式导航push|replace
+    - &gt; 会产生大量回调，浪费资源，而且写了重复的回调
+    - 最好的解决办法（事件委托+编程式导航）
+        - 1.给子节点添加自定义标签（可以传参和派给父类利于父类识别
+        - &gt; envent.target.getAttribute(&quot;自定义属性名&quot;) ![图片](./尚品汇-幕布图片-862863-364859.jpg)
+        - 2.委派事件里面，传参，路由跳转，判断几级菜单 ![图片](./尚品汇-幕布图片-363652-987629.jpg) ![图片](./尚品汇-幕布图片-223515-6149.jpg)
+</code></pre>
+<h1 id="三级菜单的动画动画"><a href="#三级菜单的动画动画" class="headerlink" title="- 三级菜单的动画动画"></a>- 三级菜单的动画动画</h1><pre><code>- &lt;transition&gt;包裹需要动画的地方 ![图片](./尚品汇-幕布图片-643866-535761.jpg)
+- 动画css的写法 ![图片](./尚品汇-幕布图片-612222-532856.jpg)
+</code></pre>
+<h1 id="三级菜单优化（由于每次跳转路由，请求就会重新发一次，浪费资源"><a href="#三级菜单优化（由于每次跳转路由，请求就会重新发一次，浪费资源" class="headerlink" title="- 三级菜单优化（由于每次跳转路由，请求就会重新发一次，浪费资源"></a>- 三级菜单优化（由于每次跳转路由，请求就会重新发一次，浪费资源</h1><pre><code>- 三级菜单属于非路由组件在路由组件中注册使用的，所以每次跳转路由所以路由就被销毁一次
+- 因为APP.vue组件只会执行一次(在APP组件中请求数据
+</code></pre>
+<h1 id="三级菜单（传query参数与搜索框的传params参数的）两个参数-合并功能"><a href="#三级菜单（传query参数与搜索框的传params参数的）两个参数-合并功能" class="headerlink" title="- 三级菜单（传query参数与搜索框的传params参数的）两个参数 合并功能"></a>- 三级菜单（传query参数与搜索框的传params参数的）两个参数 合并功能</h1><pre><code>- 搜索框里面判断、 ![图片](./尚品汇-幕布图片-15810-933893.jpg)
+- 三级菜单里面判断 ![图片](./尚品汇-幕布图片-804627-163901.jpg)
+</code></pre>
+<h1 id="mockjs模拟数据（npm-install-mockjs-–save）"><a href="#mockjs模拟数据（npm-install-mockjs-–save）" class="headerlink" title="- mockjs模拟数据（npm install mockjs –save）"></a>- mockjs模拟数据（npm install mockjs –save）</h1><pre><code>- 轮播图和floor组件的数据，服务器没有提供，所以需要mock模拟
+- 建立mock文件夹，创建各个的json文件里面存放数据（把mock当成一个服务器，从服务器拿数据，再存放到仓库） ![图片](./尚品汇-幕布图片-424428-407578.jpg)
+- mockServe.js(通过mock模拟出这些数据的接口 ![图片](./尚品汇-幕布图片-922721-4585.jpg)
+- 生成随机数据拦截ajax请求、 ![图片](./尚品汇-幕布图片-609594-112300.jpg)
+</code></pre>
+<h1 id="请求mock数据放入到仓库和放入组件"><a href="#请求mock数据放入到仓库和放入组件" class="headerlink" title="- 请求mock数据放入到仓库和放入组件"></a>- 请求mock数据放入到仓库和放入组件</h1><pre><code>- 同样的对写axios接口， ![图片](./尚品汇-幕布图片-151203-520540.jpg)
+- 仓库在reqGetBannerList接口得到从数据
+- 组件请求数据（三联环）
+</code></pre>
+<h1 id="swiper实现轮播图效果"><a href="#swiper实现轮播图效果" class="headerlink" title="- swiper实现轮播图效果"></a>- swiper实现轮播图效果</h1><pre><code>- 异步请求问题
+    - 在main.js文件中引入import ‘swiper/dist/css/swiper.min.css’;（四版本
+    - 在main.js文件中引入import &quot;swiper/css/swiper.css&quot;（五版本）
+        - vue3安装不了5版本
+    - 在main.js文件中引入import &quot;swiper/swiper-bundle.css&quot;(八版本）
+    - 在组件中引入import Swiper from &#39;swiper&#39;
+    - 在new swiper实例之前，页面中的结构必须完整
+        - dispatch是异步派发，如果dispatch和new swiper都放在mouted当中，就会产生还有没派发完成，数据拿不到，v-for就遍历的时候结构不完整，就执行new swiper的结果，导致轮播图出不来 ![图片](./尚品汇-幕布图片-930117-271007.jpg)
+        - 所以如果组件数据没有请求完成到，这个轮播图结构就会不完整，所以new swiper实例要在请求完成数据之后
+    - 把new swiper放在update当中，每当双向绑定的data当中的数据更新就要new一个updata当中的swiper，浪费资源
+- 解决方案setTimeout，延时器 ![图片](./尚品汇-幕布图片-626321-579221.jpg)
+- 最好解决方案watch＋handler＋nextTick ![图片](./尚品汇-幕布图片-901920-261752.jpg)
+</code></pre>
+<h1 id="floor组件"><a href="#floor组件" class="headerlink" title="- floor组件"></a>- floor组件</h1><pre><code>- 利用了父传子通信props
+    - 父组件中
+        - &lt;Floor v-for=&quot;(floor,index) in floorList&quot; :key=&quot;floor.id&quot; :list=&quot;floor&quot; &gt;&lt;/Floor&gt; ![图片](./尚品汇-幕布图片-25121-945292.jpg)
+    - 子组件中props写在子组件 ![图片](./尚品汇-幕布图片-139084-839525.jpg)
+- 组件之间通信方式 ![图片](./尚品汇-幕布图片-937601-435861.jpg)
+</code></pre>
+<h1 id="search组件的post请求传参"><a href="#search组件的post请求传参" class="headerlink" title="- search组件的post请求传参"></a>- search组件的post请求传参</h1><pre><code>- post接口请求需要传一个params参数和data ![图片](./尚品汇-幕布图片-584175-616427.jpg)
+- 组件发送post请求派发也要至少传一个空对象 ![图片](./尚品汇-幕布图片-140490-979497.jpg)
+- action回调写法不一样了 ![图片](./尚品汇-幕布图片-249058-998952.jpg)
+</code></pre>
+<ul>
+<li>serrch组件根据不同参数获取数据展示（$bus通信</li>
+<li>全局事件总线￥bus对搜索栏里的keyword数据置空</li>
+</ul>
+<h1 id="vue中非父子组件之间通信除了使用vuex，也可以通过bus总线，两者适用场景不同。bus其实就是一个发布订阅模式，利用vue的自定义事件机制，在触发的地方通过-emit向外发布一个事件-在需要-的页面，通过-on监听事件。-监听"><a href="#vue中非父子组件之间通信除了使用vuex，也可以通过bus总线，两者适用场景不同。bus其实就是一个发布订阅模式，利用vue的自定义事件机制，在触发的地方通过-emit向外发布一个事件-在需要-的页面，通过-on监听事件。-监听" class="headerlink" title="- &gt; vue中非父子组件之间通信除了使用vuex，也可以通过bus总线，两者适用场景不同。bus其实就是一个发布订阅模式，利用vue的自定义事件机制，在触发的地方通过$emit向外发布一个事件,在需要 的页面，通过$on监听事件。 监听"></a>- &gt; vue中非父子组件之间通信除了使用vuex，也可以通过bus总线，两者适用场景不同。bus其实就是一个发布订阅模式，利用vue的自定义事件机制，在触发的地方通过$emit向外发布一个事件,在需要 的页面，通过$on监听事件。 <a href="%22https://so.csdn.net/so/search?q=%E7%9B%91%E5%90%AC&spm=1001.2101.3001.7020%22">监听</a></h1><pre><code>- 先在入口文件里面配置全局事件总线 ![图片](./尚品汇-幕布图片-277351-150778.jpg)
+- 组件再通知$emit发送到兄弟组件事件
+- &gt; this.$bus.$emit(&quot;clear&quot;);
+- 兄弟组件$on接受事件 ![图片](./尚品汇-幕布图片-359372-593642.jpg)
+</code></pre>
+<h1 id="search的子组件，对父组件传参，通过自定义事件"><a href="#search的子组件，对父组件传参，通过自定义事件" class="headerlink" title="- search的子组件，对父组件传参，通过自定义事件"></a>- search的<SearchSelector>子组件，对父组件传参，通过自定义事件</SearchSelector></h1><pre><code>- 父组件写法：&lt;SearchSelector @trademarkInfo= &quot;trademarkInfo&quot;/&gt;
+- &gt; trademarkinfo为自定义事件 ![图片](./尚品汇-幕布图片-772566-262718.jpg)
+- 子组件写法，trademark是子组件传给父亲的参数，trademarkInfo为自定义事件名 ![图片](./尚品汇-幕布图片-923623-638775.jpg)
+</code></pre>
+<h1 id="导入icon图标"><a href="#导入icon图标" class="headerlink" title="- 导入icon图标"></a>- 导入icon图标</h1><pre><code>- 以在线链接的方式导入阿里icon图标
+    - 在阿里图标官网获取这个链接 ![图片](./尚品汇-幕布图片-592988-857148.jpg)
+    - 在public的index.html文件中导入这个链接
+    - &gt; &lt;link rel=&quot;stylesheet&quot; href=&quot; &quot;&gt; [https://at.alicdn.com/t/c/font_3769563_p1pd75h0nfc.css](&quot;https://at.alicdn.com/t/c/font_3769563_p1pd75h0nfc.css&quot;)
+    - 在组件中使用（iconfont要加，icon-xiangshang是图标名字
+    - &gt; &lt;span :class=&quot;&#123;&#39;iconfont icon-xiangshang&#39;:false,&#39;iconfont icon-xiangxia&#39;:true&#125;&quot;&gt;
+</code></pre>
+<h1 id="滚动行为（进入一个组件想要在这个组件页面滚动到特定的位置）"><a href="#滚动行为（进入一个组件想要在这个组件页面滚动到特定的位置）" class="headerlink" title="- 滚动行为（进入一个组件想要在这个组件页面滚动到特定的位置）"></a>- 滚动行为（进入一个组件想要在这个组件页面滚动到特定的位置）</h1><pre><code>- vueroute提供这方法 ![图片](./尚品汇-幕布图片-900247-523368.jpg)
+</code></pre>
+<h1 id="存储"><a href="#存储" class="headerlink" title="- 存储 "></a>- 存储 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-138833-712294.jpg" alt="图片"></h1><pre><code>- 本地存储和会话存储不允许存对象，存储的时候把数据变成了字符串存储，再把数据存储变成对象使用
+- 对象变成字符串存在会话存储sessionStorage.setItem(&quot;SKUINFO&quot;,JSON.stringify(this.skuInfo))                     存储在会话存储的数据转化为对象才能使用JSON.parse(sessionStorage.getItem(&#39;SKUINFO&#39;)) ![图片](./尚品汇-幕布图片-57867-544972.jpg)
+- 会话存储
+- 本地存储
+</code></pre>
+<h1 id="购物车unid（用户的唯一标识，传给服务器后端，身份）"><a href="#购物车unid（用户的唯一标识，传给服务器后端，身份）" class="headerlink" title="- 购物车unid（用户的唯一标识，传给服务器后端，身份）"></a>- 购物车unid（用户的唯一标识，传给服务器后端，身份）</h1><pre><code>- 因为购物已经传给服务器两个数据了skuNum和skuId了，没有传unid，通过requests.js里面请求拦截器加在请求头header里面
+    - unid添加到请求拦截器header中，只要发送请求，所有请求的的header&#39;都会用unid ![图片](./尚品汇-幕布图片-831561-495462.jpg) ![图片](./尚品汇-幕布图片-541409-887707.jpg)
+- 新建一个uils文件夹里面存放uuid模块生成用户唯一身份字符 ![图片](./尚品汇-幕布图片-563070-374003.jpg)
+</code></pre>
+<h1 id="把API接口请求挂载在原型对象身上"><a href="#把API接口请求挂载在原型对象身上" class="headerlink" title="把API接口请求挂载在原型对象身上"></a>把API接口请求挂载在原型对象身上</h1><pre><code>- 这样子做可以，当仓库或者组件发送请求的时候，可以不需要引入 ![图片](./尚品汇-幕布图片-824263-562231.jpg) ![图片](./尚品汇-幕布图片-803588-732493.jpg)
+</code></pre>
+<h1 id="element-ui组件库-需要先安装npm-install-–save-element-ui"><a href="#element-ui组件库-需要先安装npm-install-–save-element-ui" class="headerlink" title="- element-ui组件库(需要先安装npm install –save element-ui "></a>- element-ui组件库(需要先安装npm install –save element-ui <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-818429-863256.jpg" alt="图片"></h1><pre><code>- 全部引入时： ![图片](./尚品汇-幕布图片-563225-989846.jpg)
+- 部分引入ui库里所需组件：     (需借助babel-plugin-component库          npm  install babel-plugin-component  -D ![图片](./尚品汇-幕布图片-182108-770498.jpg)
+- 然后配置babel.config.js文件 ![图片](./尚品汇-幕布图片-402614-83568.jpg)
+- 还有一种注册方法：挂载在原型上 ![图片](./尚品汇-幕布图片-384002-168293.jpg) ![图片](./尚品汇-幕布图片-355727-607683.jpg)
+- 
+</code></pre>
+<h1 id="二级路由-路由出口，导航式路由跳转＋路由出口"><a href="#二级路由-路由出口，导航式路由跳转＋路由出口" class="headerlink" title="- 二级路由+路由出口，导航式路由跳转＋路由出口"></a>- 二级路由+路由出口，导航式路由跳转＋路由出口</h1><pre><code>- 二级路由注册chidren ![图片](./尚品汇-幕布图片-898815-18024.jpg)
+- 导航式路由，如果在一级组件有二级路由出口的话会在本页面当成子路由显示，（一级组件路径为center，二级子路由跳转变为center/myorder,原来父组件的内容不会消失，二级路由会在路由出口显示 ![图片](./尚品汇-幕布图片-289993-50045.jpg)
+- 路由出口router-view ![图片](./尚品汇-幕布图片-504145-113455.jpg)
+- 重定向-----觉得麻烦的可以直接写redirect:&quot;/center/myorder&quot;,
+</code></pre>
+<h1 id="守卫"><a href="#守卫" class="headerlink" title="- 守卫"></a>- 守卫</h1><pre><code>- 路由独享守卫（beforeEeter ![图片](./尚品汇-幕布图片-952683-759312.jpg)
+- 组件内守卫（写在组件里面，beforeRouterEenter等) ![图片](./尚品汇-幕布图片-122689-193310.jpg)
+</code></pre>
+<h1 id="自定义插件（自定义指令）vue-use-installl-（全局指令）"><a href="#自定义插件（自定义指令）vue-use-installl-（全局指令）" class="headerlink" title="- 自定义插件（自定义指令）vue.use() installl （全局指令）"></a>- 自定义插件（自定义指令）vue.use() installl （全局指令）</h1><pre><code>- 自定义vue插件 ![图片](./尚品汇-幕布图片-631122-754888.jpg)
+- main.js注册 ![图片](./尚品汇-幕布图片-728707-246854.jpg)
+- 使用自定义插件（自定义指令）（全局指令） ![图片](./尚品汇-幕布图片-720295-359527.jpg)
+</code></pre>
+<ul>
+<li>项目上线（js文件映射的map文件 <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-560130-144986.jpg" alt="图片"> <img src="/2020/10/21/vue%E9%A1%B9%E7%9B%AE%E5%B0%9A%E5%93%81%E6%B1%87%E5%95%86%E5%9F%8E/%E5%B0%9A%E5%93%81%E6%B1%87-%E5%B9%95%E5%B8%83%E5%9B%BE%E7%89%87-527623-670122.jpg" alt="图片"></li>
+<li>前端的可以看天禹老师怎么用nodejs部署到express上的也可以</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer"><script src="//sdk.jinrishici.com/v2/browser/jinrishici.js"></script>
+<script>
+  jinrishici.load((result) => {
+    let jrsc = document.getElementById('jrsc');
+    const data = result.data;
+    let author = data.origin.author;
+    let title = '《' + data.origin.title + '》';
+    let content = data.content.substr(0, data.content.length - 1);
+    let dynasty = data.origin.dynasty.substr(0, data.origin.dynasty.length - 1);
+    jrsc.innerText = content + ' @ ' + dynasty + '·' + author + title;
+  });
+</script>
+<div style="text-align: center"><span id="jrsc" >正在加载今日诗词....</span></div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2020/09/21/sql%E6%B3%A8%E5%85%A5/" rel="prev" title="sql注入">
+                  <i class="fa fa-angle-left"></i> sql注入
+                </a>
+            </div>
+            <div class="post-nav-item">
+                <a href="/2020/11/21/linux%E5%AD%A6%E4%B9%A0/" rel="next" title="linux学习">
+                  linux学习 <i class="fa fa-angle-right"></i>
+                </a>
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2023</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">HWW</span>
+  </div>
+<div class="wordcount">
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-line"></i>
+    </span>
+    <span title="站点总字数">14k</span>
+  </span>
+  <span class="post-meta-item">
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="站点阅读时长">24 分钟</span>
+  </span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pangu/4.0.7/pangu.min.js" integrity="sha256-j+yj56cdEY2CwkVtGyz18fNybFGpMGJ8JxG3GSyO2+I=" crossorigin="anonymous"></script>
+<script src="/js/comments.js"></script><script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+</body>
+</html>
