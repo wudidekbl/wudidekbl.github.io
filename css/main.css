@@ -1530,12 +1530,12 @@ pre code {
 }
 .use-motion .post-block {
   visibility: hidden;
-  margin-top: 0px;
+  margin-top: -20px;
   margin-bottom: 60px;
   padding: 15px;
   border-radius: 20px 20px 20px 20px;
-  -webkit-box-shadow: 0 0 5px rgba(202,203,203,0.5);
-  -moz-box-shadow: 0 0 5px rgba(202,203,204,0.5);
+  -webkit-box-shadow: 0 0 15px rgba(202,203,203,0.5);
+  -moz-box-shadow: 0 0 15px rgba(202,203,204,0.5);
 }
 .use-motion .pagination,
 .use-motion .comments {
