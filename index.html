@@ -124,7 +124,7 @@
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
         <a href="/archives/">
-          <span class="site-state-item-count">9</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -146,6 +146,222 @@
     </div>
 
     <div class="main-inner index posts-expand">
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
+      <meta itemprop="name" content="HWW">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/" class="post-title-link" itemprop="url">vps搭建节点</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-10-10 14:28:02 / 修改时间：15:09:39" itemprop="dateCreated datePublished" datetime="2023-10-10T14:28:02+08:00">2023-10-10</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>1k</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>2 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <p>对于节点速度慢,chatgpt老是被封锁,想要一个好的上网体验,网上机场鱼龙混杂,vps服务器延迟问题,曾购买80元价格vltur的vps,发现延迟太高,搭建起来的节点根本不够使用,结果到一个还算比较实惠和延迟低的vps,最终确定下来的解决方案,是vps自己搭建节点,不过可能需要后期维护有点麻烦,和是三个人合资购买使用的节点可能会遇到点阻碍,但是没有风险,收益就很少</p>
+<!---more--->
+
+<p>ps：参考x-ui方案</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://xtrojan.vip/bgfw/xray/x-ui-build-node.html">https://xtrojan.vip/bgfw/xray/x-ui-build-node.html</a></p>
+</blockquote>
+<p>参考shadowroks解决方案</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://jackmezone.medium.com/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-vultr-vps-%E6%90%AD%E5%BB%BA-shadowsocks-ss-%E6%95%99%E7%A8%8B-%E6%96%B0%E6%89%8B%E5%90%91-968613081aae">https://jackmezone.medium.com/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91-vultr-vps-%E6%90%AD%E5%BB%BA-shadowsocks-ss-%E6%95%99%E7%A8%8B-%E6%96%B0%E6%89%8B%E5%90%91-968613081aae</a></p>
+</blockquote>
+<h1 id="野草云vps"><a href="#野草云vps" class="headerlink" title="野草云vps"></a>野草云vps</h1><p>xshell连接服务器<br>安装wget</p>
+<h1 id="1-shadoworks解决方案"><a href="#1-shadoworks解决方案" class="headerlink" title="1.shadoworks解决方案"></a>1.shadoworks解决方案</h1><blockquote>
+<p>[root@C20230912122447 ~]# wget –no-check-certificate -O shadowsocks-all.sh <a target="_blank" rel="noopener" href="https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh">https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh</a></p>
+</blockquote>
+<blockquote>
+<p>[root@C20230912122447 ~]# chmod +x shadowsocks-all.sh</p>
+</blockquote>
+<blockquote>
+<p>[root@C20230912122447 ~]# .&#x2F;shadowsocks-all.sh 2&gt;&amp;1 | tee shadowsocks-all.log</p>
+</blockquote>
+<p><img src="/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/image.png" alt="Alt text"><br>ps: centos9不兼容pytho版本</p>
+<h1 id="1-1-BBR加速"><a href="#1-1-BBR加速" class="headerlink" title="1.1 BBR加速"></a>1.1 BBR加速</h1><blockquote>
+<p>wget –no-check-certificate <a target="_blank" rel="noopener" href="https://github.com/teddysun/across/raw/master/bbr.sh">https://github.com/teddysun/across/raw/master/bbr.sh</a> &amp;&amp; chmod +x bbr.sh &amp;&amp; .&#x2F;bbr.s</p>
+</blockquote>
+<h1 id="2-x-ui解决方案"><a href="#2-x-ui解决方案" class="headerlink" title="2.x-ui解决方案"></a>2.x-ui解决方案</h1><p>安装x-ui</p>
+<blockquote>
+<p> bash &lt;(curl -Ls <a target="_blank" rel="noopener" href="https://raw.githubusercontents.com/vaxilu/x-ui/master/install.sh">https://raw.githubusercontents.com/vaxilu/x-ui/master/install.sh</a>)</p>
+</blockquote>
+<p>设置账号密码端口<br><img src="/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/image-1.png" alt="Alt text"></p>
+<p>直接ip加端口网页登陆x-ui界面<br><img src="/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/image-2.png" alt="Alt text"></p>
+<p>在网站里面可以配置节点</p>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
+
+    
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/08/linux%E7%AD%89%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E4%B8%8A%E6%8E%A5%E8%A7%A6%E7%9A%84%E6%8C%87%E4%BB%A4/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
+      <meta itemprop="name" content="HWW">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="undefined | Hexo">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          <a href="/2023/10/08/linux%E7%AD%89%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E4%B8%8A%E6%8E%A5%E8%A7%A6%E7%9A%84%E6%8C%87%E4%BB%A4/" class="post-title-link" itemprop="url">linux等一些工作上接触的指令</a>
+        </h2>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2023-10-08 11:26:21 / 修改时间：12:07:53" itemprop="dateCreated datePublished" datetime="2023-10-08T11:26:21+08:00">2023-10-08</time>
+    </span>
+
+  
+    <span class="post-meta-break"></span>
+    <span class="post-meta-item" title="本文字数">
+      <span class="post-meta-item-icon">
+        <i class="far fa-file-word"></i>
+      </span>
+      <span class="post-meta-item-text">本文字数：</span>
+      <span>489</span>
+    </span>
+    <span class="post-meta-item" title="阅读时长">
+      <span class="post-meta-item-icon">
+        <i class="far fa-clock"></i>
+      </span>
+      <span class="post-meta-item-text">阅读时长 &asymp;</span>
+      <span>1 分钟</span>
+    </span>
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+          <blockquote>
+<p>对于ansible的使用,需要各个目标主机需要相同的时区和时间,需要用到liux的时间相关的指令</p>
+</blockquote>
+<!---more--->
+
+<h1 id="查看时间和时区"><a href="#查看时间和时区" class="headerlink" title="查看时间和时区"></a>查看时间和时区</h1><h2 id="timetectl-status"><a href="#timetectl-status" class="headerlink" title="timetectl status"></a>timetectl status</h2><h2 id="data-R"><a href="#data-R" class="headerlink" title="data -R"></a>data -R</h2><h1 id="修改-时间和时区"><a href="#修改-时间和时区" class="headerlink" title="修改 时间和时区"></a>修改 时间和时区</h1><blockquote>
+<p>进去root权限下<br>su</p>
+</blockquote>
+<h2 id="data-s"><a href="#data-s" class="headerlink" title="data -s"></a>data -s</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data -s &quot;2012-1-2 19:23:40&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="服务器时区设置"><a href="#服务器时区设置" class="headerlink" title="服务器时区设置"></a>服务器时区设置</h2><blockquote>
+<p>timedatectl set-timezone Asia&#x2F;Shanghai     </p>
+</blockquote>
+<h2 id="修改时区不重启"><a href="#修改时区不重启" class="headerlink" title="修改时区不重启"></a>修改时区不重启</h2><p>在root下<br>1、复制相应的时区文件，替换系统时区文件：<br>Linux代码</p>
+<blockquote>
+<p>cp &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;$主时区&#x2F;$次时区 &#x2F;etc&#x2F;localtime<br>cp &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;$主时区&#x2F;$次时区 &#x2F;etc&#x2F;localtime<br>列:root@ubuntu:&#x2F;# cp &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai  &#x2F;etc&#x2F;localtime</p>
+</blockquote>
+
+      
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+        <div class="post-eof"></div>
+      
+    </footer>
+  </article>
+</div>
+
+
+
 
     
 
@@ -335,218 +551,6 @@
 
 
 
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/11/21/linux%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
-      <meta itemprop="name" content="HWW">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="Do not go gentle into that good night">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/11/21/linux%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">linux学习</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-11-21 23:07:03" itemprop="dateCreated datePublished" datetime="2020-11-21T23:07:03+08:00">2020-11-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-21 23:24:51" itemprop="dateModified" datetime="2023-09-21T23:24:51+08:00">2023-09-21</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>3.3k</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>5 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="linux基础篇"><a href="#linux基础篇" class="headerlink" title="linux基础篇"></a>linux基础篇</h1><ul>
-<li>在linux下部署文件：因为大部分服务器都是linux系统的</li>
-<li>linux在个人桌面上的应用，：乌班图 等<ul>
-<li>在服务器上的应用：后端</li>
-<li>嵌入式</li>
-</ul>
-</li>
-</ul>
-<h1 id="linux学习流程"><a href="#linux学习流程" class="headerlink" title="- linux学习流程"></a>- linux学习流程</h1><pre><code>- 1.文件操作命令，编辑工具使用（vi vim），linux用户管理（useradd，userdel， usermod）
-- 2.各种配置*（环境配置，网络配置，服务配置）
-- 3.如何搭建对应语言的开发环境（大数据，javaee python）
-- 4.能写shell脚本，对linux服务器进行维护
-- 5.进行安全设计，防止攻击
-- 5.能深入linux系统，熟练掌握大型网络应用架构组成，并熟练各个环节的部署和维护方法
-</code></pre>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/11/21/linux%E5%AD%A6%E4%B9%A0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
-    
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/10/22/mysql%E5%AD%A6%E4%B9%A0/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
-      <meta itemprop="name" content="HWW">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Hexo">
-      <meta itemprop="description" content="Do not go gentle into that good night">
-    </span>
-
-    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="undefined | Hexo">
-      <meta itemprop="description" content="">
-    </span>
-      <header class="post-header">
-        <h2 class="post-title" itemprop="name headline">
-          <a href="/2020/10/22/mysql%E5%AD%A6%E4%B9%A0/" class="post-title-link" itemprop="url">mysql学习</a>
-        </h2>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">发表于</span>
-
-      <time title="创建时间：2020-10-22 16:53:00" itemprop="dateCreated datePublished" datetime="2020-10-22T16:53:00+08:00">2020-10-22</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-22 17:03:11" itemprop="dateModified" datetime="2023-09-22T17:03:11+08:00">2023-09-22</time>
-    </span>
-
-  
-    <span class="post-meta-break"></span>
-    <span class="post-meta-item" title="本文字数">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">本文字数：</span>
-      <span>231</span>
-    </span>
-    <span class="post-meta-item" title="阅读时长">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>1 分钟</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-          <h1 id="查看mysql数据库日志"><a href="#查看mysql数据库日志" class="headerlink" title="查看mysql数据库日志"></a>查看mysql数据库日志</h1><p>首先要确认记录日志功能是否打开<br>1.在数据库文件夹下的bin文件夹,cmd打开然后登陆</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -u root -p</span><br></pre></td></tr></table></figure>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql&gt;show variables like &#x27;log%&#x27;;（是否启用了日志）</span><br></pre></td></tr></table></figure>
-          <!--noindex-->
-            <div class="post-button">
-              <a class="btn" href="/2020/10/22/mysql%E5%AD%A6%E4%B9%A0/#more" rel="contents">
-                阅读全文 &raquo;
-              </a>
-            </div>
-          <!--/noindex-->
-        
-      
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-        <div class="post-eof"></div>
-      
-    </footer>
-  </article>
-</div>
-
-
-
-
   <nav class="pagination">
     <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" title="下一页" aria-label="下一页" href="/page/2/"><i class="fa fa-angle-right"></i></a>
   </nav>
@@ -570,13 +574,13 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-chart-line"></i>
     </span>
-    <span title="站点总字数">16k</span>
+    <span title="站点总字数">17k</span>
   </span>
   <span class="post-meta-item">
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">26 分钟</span>
+    <span title="站点阅读时长">29 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动

