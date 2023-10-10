@@ -19,19 +19,20 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="对于节点速度慢,chatgpt老是被封锁,想要一个好的上网体验,网上机场鱼龙混杂,vps服务器延迟问题,曾购买80元价格vltur的vps,发现延迟太高,搭建起来的节点根本不够使用,结果到一个还算比较实惠和延迟低的vps,最终确定下来的解决方案,是vps自己搭建节点,不过可能需要后期维护有点麻烦,和是三个人合资购买使用的节点可能会遇到点阻碍,但是没有风险,收益就很少   ps：参考x-ui方案">
+    <meta name="description" content="对于节点速度慢,chatgpt老是被封锁,想要一个好的上网体验,网上机场鱼龙混杂,vps服务器延迟问题,曾购买80元价格vltur的vps,发现延迟太高,搭建起来的节点根本不够使用,结果到一个还算比较实惠和延迟低的vps,最终确定下来的解决方案,是vps自己搭建节点,不过可能需要后期维护有点麻烦,和是三个人合资购买使用的节点可能会遇到点阻碍,但是没有风险,收益就很少">
 <meta property="og:type" content="article">
 <meta property="og:title" content="vps搭建节点">
 <meta property="og:url" content="http://example.com/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="对于节点速度慢,chatgpt老是被封锁,想要一个好的上网体验,网上机场鱼龙混杂,vps服务器延迟问题,曾购买80元价格vltur的vps,发现延迟太高,搭建起来的节点根本不够使用,结果到一个还算比较实惠和延迟低的vps,最终确定下来的解决方案,是vps自己搭建节点,不过可能需要后期维护有点麻烦,和是三个人合资购买使用的节点可能会遇到点阻碍,但是没有风险,收益就很少   ps：参考x-ui方案">
+<meta property="og:description" content="对于节点速度慢,chatgpt老是被封锁,想要一个好的上网体验,网上机场鱼龙混杂,vps服务器延迟问题,曾购买80元价格vltur的vps,发现延迟太高,搭建起来的节点根本不够使用,结果到一个还算比较实惠和延迟低的vps,最终确定下来的解决方案,是vps自己搭建节点,不过可能需要后期维护有点麻烦,和是三个人合资购买使用的节点可能会遇到点阻碍,但是没有风险,收益就很少">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/image.png">
 <meta property="og:image" content="http://example.com/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/image-1.png">
 <meta property="og:image" content="http://example.com/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/image-2.png">
 <meta property="article:published_time" content="2023-10-10T06:28:02.000Z">
-<meta property="article:modified_time" content="2023-10-10T07:13:50.644Z">
+<meta property="article:modified_time" content="2023-10-10T07:27:46.639Z">
 <meta property="article:author" content="HWW">
+<meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/10/vps%E6%90%AD%E5%BB%BA%E8%8A%82%E7%82%B9/image.png">
 
@@ -193,7 +194,7 @@
       <span class="post-meta-item-text">发表于</span>
       
 
-      <time title="创建时间：2023-10-10 14:28:02 / 修改时间：15:13:50" itemprop="dateCreated datePublished" datetime="2023-10-10T14:28:02+08:00">2023-10-10</time>
+      <time title="创建时间：2023-10-10 14:28:02 / 修改时间：15:27:46" itemprop="dateCreated datePublished" datetime="2023-10-10T14:28:02+08:00">2023-10-10</time>
     </span>
 
   
@@ -221,7 +222,7 @@
     
     
     <div class="post-body" itemprop="articleBody"><p>对于节点速度慢,chatgpt老是被封锁,想要一个好的上网体验,网上机场鱼龙混杂,vps服务器延迟问题,曾购买80元价格vltur的vps,发现延迟太高,搭建起来的节点根本不够使用,结果到一个还算比较实惠和延迟低的vps,最终确定下来的解决方案,是vps自己搭建节点,不过可能需要后期维护有点麻烦,和是三个人合资购买使用的节点可能会遇到点阻碍,但是没有风险,收益就很少</p>
-<!---more--->
+<span id="more"></span>
 
 <p>ps：参考x-ui方案</p>
 <blockquote>
@@ -272,6 +273,9 @@
   });
 </script>
 <div style="text-align: center"><span id="jrsc" >正在加载今日诗词....</span></div>
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+          </div>
 
         
 
