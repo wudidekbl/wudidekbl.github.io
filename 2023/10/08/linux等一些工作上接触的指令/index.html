@@ -19,15 +19,15 @@
 
 <script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Pisces","darkmode":false,"version":"8.18.1","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12},"copycode":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js"></script>
 
-    <meta name="description" content="对于ansible的使用,需要各个目标主机需要相同的时区和时间,需要用到liux的时间相关的指令    查看时间和时区timetectl statusdata -R修改 时间和时区 进去root权限下su  data -s1data -s &quot;2012-1-2 19:23:40&quot; 服务器时区设置 timedatectl set-timezone Asia&#x2F;Shangh">
+    <meta name="description" content="对于ansible的使用,需要各个目标主机需要相同的时区和时间,需要用到liux的时间相关的指令">
 <meta property="og:type" content="article">
 <meta property="og:title" content="linux等一些工作上接触的指令">
 <meta property="og:url" content="http://example.com/2023/10/08/linux%E7%AD%89%E4%B8%80%E4%BA%9B%E5%B7%A5%E4%BD%9C%E4%B8%8A%E6%8E%A5%E8%A7%A6%E7%9A%84%E6%8C%87%E4%BB%A4/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="对于ansible的使用,需要各个目标主机需要相同的时区和时间,需要用到liux的时间相关的指令    查看时间和时区timetectl statusdata -R修改 时间和时区 进去root权限下su  data -s1data -s &quot;2012-1-2 19:23:40&quot; 服务器时区设置 timedatectl set-timezone Asia&#x2F;Shangh">
+<meta property="og:description" content="对于ansible的使用,需要各个目标主机需要相同的时区和时间,需要用到liux的时间相关的指令">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-08T03:26:21.000Z">
-<meta property="article:modified_time" content="2023-10-12T02:43:48.499Z">
+<meta property="article:modified_time" content="2023-10-12T02:47:09.842Z">
 <meta property="article:author" content="HWW">
 <meta property="article:tag" content="linux">
 <meta name="twitter:card" content="summary">
@@ -197,7 +197,7 @@
         <i class="far fa-calendar-check"></i>
       </span>
       <span class="post-meta-item-text">更新于</span>
-      <time title="修改时间：2023-10-12 10:43:48" itemprop="dateModified" datetime="2023-10-12T10:43:48+08:00">2023-10-12</time>
+      <time title="修改时间：2023-10-12 10:47:09" itemprop="dateModified" datetime="2023-10-12T10:47:09+08:00">2023-10-12</time>
     </span>
 
   
@@ -227,7 +227,7 @@
     <div class="post-body" itemprop="articleBody"><blockquote>
 <p>对于ansible的使用,需要各个目标主机需要相同的时区和时间,需要用到liux的时间相关的指令</p>
 </blockquote>
-<!---more--->
+<span id="more"></span>
 
 <h1 id="查看时间和时区"><a href="#查看时间和时区" class="headerlink" title="查看时间和时区"></a>查看时间和时区</h1><h2 id="timetectl-status"><a href="#timetectl-status" class="headerlink" title="timetectl status"></a>timetectl status</h2><h2 id="data-R"><a href="#data-R" class="headerlink" title="data -R"></a>data -R</h2><h1 id="修改-时间和时区"><a href="#修改-时间和时区" class="headerlink" title="修改 时间和时区"></a>修改 时间和时区</h1><blockquote>
 <p>进去root权限下<br>su</p>
@@ -244,15 +244,15 @@
 <p>scp【本地或远程文件的路径】【服务器用户名】@【服务器地址】：【远程或本地文件的路径】</p>
 <p>-C： 允许压缩。（将-C标志传递给ssh，从而打开压缩功能）<br>-p：保留原文件的修改时间，访问时间和访问权限。<br>-q： 不显示传输进度条。<br>-r： 递归复制整个目录。<br>-v：详细方式显示输出。scp和ssh(1)会显示出整个过程的调试信息。这些信息用于调试连接，验证和配置问题。<br>-c cipher： 以cipher将数据传输进行加密，这个选项将直接传递给ssh。<br>-F ssh_config： 指定一个替代的ssh配置文件，此参数直接传递给ssh。<br>-i identity_file： 从指定文件中读取传输时使用的密钥文件，此参数直接传递给ssh。<br>-l limit： 限定用户所能使用的带宽，以Kbit&#x2F;s为单位。<br>-o ssh_option： 如果习惯于使用ssh_config(5)中的参数传递方式，<br>-P port：注意是大写的P, port是指定数据传输用到的端口号<br>-S program： 指定加密传输时所使用的程序。此程序必须能够理解ssh(1)的选项。</p>
 <h2 id="二、scp-命令使用"><a href="#二、scp-命令使用" class="headerlink" title="二、scp 命令使用"></a>二、scp 命令使用</h2><h3 id="1-从本地将文件传输到服务器"><a href="#1-从本地将文件传输到服务器" class="headerlink" title="1.从本地将文件传输到服务器"></a>1.从本地将文件传输到服务器</h3><p>scp【本地文件的路径】【服务器用户名】@【服务器地址】：【服务器上存放文件的路径】</p>
-<p>scp -r &#x2F;home&#x2F;ds&#x2F;Desktop&#x2F;example0.txt <a href="mailto:&#101;&#x61;&#x69;&#x62;&#111;&#x74;&#x40;&#x31;&#x39;&#50;&#46;&#x31;&#54;&#x38;&#x2e;&#51;&#49;&#x2e;&#x32;&#48;&#x30;">&#101;&#x61;&#x69;&#x62;&#111;&#x74;&#x40;&#x31;&#x39;&#50;&#46;&#x31;&#54;&#x38;&#x2e;&#51;&#49;&#x2e;&#x32;&#48;&#x30;</a>:&#x2F;home&#x2F;eaibot&#x2F;</p>
+<p>scp -r &#x2F;home&#x2F;ds&#x2F;Desktop&#x2F;example0.txt <a href="mailto:&#x65;&#x61;&#105;&#98;&#x6f;&#x74;&#x40;&#x31;&#x39;&#x32;&#x2e;&#49;&#x36;&#56;&#46;&#x33;&#49;&#x2e;&#50;&#48;&#x30;">&#x65;&#x61;&#105;&#98;&#x6f;&#x74;&#x40;&#x31;&#x39;&#x32;&#x2e;&#49;&#x36;&#56;&#46;&#x33;&#49;&#x2e;&#50;&#48;&#x30;</a>:&#x2F;home&#x2F;eaibot&#x2F;</p>
 <h3 id="2-从本地将文件夹传输到服务器"><a href="#2-从本地将文件夹传输到服务器" class="headerlink" title="2.从本地将文件夹传输到服务器"></a>2.从本地将文件夹传输到服务器</h3><p>scp【本地文件夹的路径】【服务器用户名】@【服务器地址】：【服务器上存放文件的路径】</p>
-<p>scp -r &#x2F;home&#x2F;ds&#x2F;Desktop&#x2F;example1 <a href="mailto:&#101;&#97;&#105;&#98;&#111;&#116;&#x40;&#49;&#x39;&#50;&#46;&#49;&#x36;&#x38;&#x2e;&#51;&#x31;&#46;&#50;&#48;&#x30;">&#101;&#97;&#105;&#98;&#111;&#116;&#x40;&#49;&#x39;&#50;&#46;&#49;&#x36;&#x38;&#x2e;&#51;&#x31;&#46;&#50;&#48;&#x30;</a>:&#x2F;home&#x2F;eaibot&#x2F;</p>
+<p>scp -r &#x2F;home&#x2F;ds&#x2F;Desktop&#x2F;example1 <a href="mailto:&#x65;&#97;&#105;&#98;&#111;&#116;&#x40;&#49;&#57;&#x32;&#x2e;&#49;&#54;&#x38;&#46;&#x33;&#49;&#x2e;&#x32;&#48;&#x30;">&#x65;&#97;&#105;&#98;&#111;&#116;&#x40;&#49;&#57;&#x32;&#x2e;&#49;&#54;&#x38;&#46;&#x33;&#49;&#x2e;&#x32;&#48;&#x30;</a>:&#x2F;home&#x2F;eaibot&#x2F;</p>
 <h3 id="3-将服务器上的文件传输到本地"><a href="#3-将服务器上的文件传输到本地" class="headerlink" title="3.将服务器上的文件传输到本地"></a>3.将服务器上的文件传输到本地</h3><p>这里，需使用ssh登陆服务器，方可进行远程拷贝文件操作。</p>
 <p>[ssh]【服务器用户名】@【服务器地址】</p>
 <p>scp 【服务器用户名】@【服务器地址】：【服务器上存放文件的路径】【本地文件的路径】</p>
-<p>ssh <a href="mailto:&#x65;&#97;&#105;&#98;&#111;&#x74;&#64;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#x38;&#46;&#x33;&#49;&#x2e;&#x32;&#48;&#x30;">&#x65;&#97;&#105;&#98;&#111;&#x74;&#64;&#49;&#57;&#50;&#x2e;&#x31;&#54;&#x38;&#46;&#x33;&#49;&#x2e;&#x32;&#48;&#x30;</a><br>scp <a href="mailto:&#x65;&#97;&#105;&#98;&#111;&#116;&#x40;&#49;&#x39;&#50;&#x2e;&#49;&#x36;&#56;&#x2e;&#51;&#x31;&#46;&#x32;&#x30;&#48;">&#x65;&#97;&#105;&#98;&#111;&#116;&#x40;&#49;&#x39;&#50;&#x2e;&#49;&#x36;&#56;&#x2e;&#51;&#x31;&#46;&#x32;&#x30;&#48;</a>:&#x2F;home&#x2F;eaibot&#x2F;example1.txt &#x2F;home&#x2F;ds&#x2F;Desktop&#x2F;</p>
+<p>ssh <a href="mailto:&#x65;&#97;&#x69;&#98;&#x6f;&#x74;&#x40;&#49;&#x39;&#x32;&#x2e;&#49;&#54;&#56;&#46;&#51;&#x31;&#x2e;&#50;&#x30;&#48;">&#x65;&#97;&#x69;&#98;&#x6f;&#x74;&#x40;&#49;&#x39;&#x32;&#x2e;&#49;&#54;&#56;&#46;&#51;&#x31;&#x2e;&#50;&#x30;&#48;</a><br>scp <a href="mailto:&#x65;&#x61;&#x69;&#x62;&#111;&#116;&#x40;&#49;&#x39;&#50;&#x2e;&#49;&#x36;&#56;&#x2e;&#x33;&#49;&#46;&#50;&#x30;&#x30;">&#x65;&#x61;&#x69;&#x62;&#111;&#116;&#x40;&#49;&#x39;&#50;&#x2e;&#49;&#x36;&#56;&#x2e;&#x33;&#49;&#46;&#50;&#x30;&#x30;</a>:&#x2F;home&#x2F;eaibot&#x2F;example1.txt &#x2F;home&#x2F;ds&#x2F;Desktop&#x2F;</p>
 <h3 id="4-将服务器上的文件夹传输到本地"><a href="#4-将服务器上的文件夹传输到本地" class="headerlink" title="4.将服务器上的文件夹传输到本地"></a>4.将服务器上的文件夹传输到本地</h3><p>scp -r 【服务器用户名】@【服务器地址】:【服务器上存放文件夹的路径】【本地文件的路径】</p>
-<p>scp -r <a href="mailto:&#101;&#97;&#x69;&#98;&#111;&#116;&#64;&#x31;&#57;&#x32;&#x2e;&#49;&#x36;&#x38;&#x2e;&#51;&#49;&#x2e;&#50;&#48;&#48;">&#101;&#97;&#x69;&#98;&#111;&#116;&#64;&#x31;&#57;&#x32;&#x2e;&#49;&#x36;&#x38;&#x2e;&#51;&#49;&#x2e;&#50;&#48;&#48;</a>:&#x2F;home&#x2F;eaibot&#x2F;example1 &#x2F;home&#x2F;ds&#x2F;Desktop</p>
+<p>scp -r <a href="mailto:&#x65;&#97;&#105;&#x62;&#111;&#x74;&#64;&#49;&#57;&#50;&#46;&#49;&#x36;&#x38;&#46;&#x33;&#49;&#46;&#x32;&#x30;&#48;">&#x65;&#97;&#105;&#x62;&#111;&#x74;&#64;&#49;&#57;&#50;&#46;&#49;&#x36;&#x38;&#46;&#x33;&#49;&#46;&#x32;&#x30;&#48;</a>:&#x2F;home&#x2F;eaibot&#x2F;example1 &#x2F;home&#x2F;ds&#x2F;Desktop</p>
 <h1 id="swap指令-虚拟内存"><a href="#swap指令-虚拟内存" class="headerlink" title="swap指令 虚拟内存"></a>swap指令 虚拟内存</h1><h2 id="清除swap"><a href="#清除swap" class="headerlink" title="清除swap"></a>清除swap</h2><blockquote>
 <p>swapoff -a</p>
 </blockquote>
