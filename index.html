@@ -184,8 +184,9 @@
         <i class="far fa-calendar"></i>
       </span>
       <span class="post-meta-item-text">发表于</span>
+      
 
-      <time title="创建时间：2023-11-16 12:02:40" itemprop="dateCreated datePublished" datetime="2023-11-16T12:02:40+08:00">2023-11-16</time>
+      <time title="创建时间：2023-11-16 12:02:40 / 修改时间：17:37:26" itemprop="dateCreated datePublished" datetime="2023-11-16T12:02:40+08:00">2023-11-16</time>
     </span>
 
   
@@ -195,7 +196,7 @@
         <i class="far fa-file-word"></i>
       </span>
       <span class="post-meta-item-text">本文字数：</span>
-      <span>0</span>
+      <span>706</span>
     </span>
     <span class="post-meta-item" title="阅读时长">
       <span class="post-meta-item-icon">
@@ -213,7 +214,29 @@
     
     
     <div class="post-body" itemprop="articleBody">
-          
+          <h1 id="mysql-安装和部署"><a href="#mysql-安装和部署" class="headerlink" title="mysql 安装和部署"></a>mysql 安装和部署</h1><h2 id="mysql依赖用户组和用户，后面初始化要用到"><a href="#mysql依赖用户组和用户，后面初始化要用到" class="headerlink" title="mysql依赖用户组和用户，后面初始化要用到"></a>mysql依赖用户组和用户，后面初始化要用到</h2><pre><code>创建mysql组
+groupadd -r mysql --system
+
+创建mysql用户并添加到组
+useradd -r -g mysql --system mysql
+</code></pre>
+<h2 id="解压mysql文件到-usr-local-mysql下，里面存放的一般是MySQL的安装根目录。"><a href="#解压mysql文件到-usr-local-mysql下，里面存放的一般是MySQL的安装根目录。" class="headerlink" title="解压mysql文件到&#x2F;usr&#x2F;local&#x2F;mysql下，里面存放的一般是MySQL的安装根目录。"></a>解压mysql文件到&#x2F;usr&#x2F;local&#x2F;mysql下，里面存放的一般是MySQL的安装根目录。</h2><pre><code># 文件传至目标服务器解压
+tar -xf $roles_path/mysql/files/mysql-8.0.20-linux-glibc2.12-x86_64.tar.xz -C /usr/local/mysql
+# 给mysql安装根目录设置权限
+chown root:root -R /usr/local/mysql
+</code></pre>
+<h2 id="配置mysql配置文件-设置在-etc-my-cnf下"><a href="#配置mysql配置文件-设置在-etc-my-cnf下" class="headerlink" title="配置mysql配置文件 设置在&#x2F;etc&#x2F;my.cnf下"></a>配置mysql配置文件 设置在&#x2F;etc&#x2F;my.cnf下</h2><pre><code>#生成mysql_my_cnf文件
+cp $mysql_j2_path/my.cnf.j2 /etc/my.cnf
+#修改my》cnf配置文件的一些参数
+    #本机ip
+    sed -i &quot;s#&#123;&#123;mysql_ip&#125;&#125;#$mysql_ip#g&quot; /etc/my.cnf
+    #根目录路径
+    sed -i &quot;s#&#123;&#123;mysql_install_path&#125;&#125;
+    #$mysql_install_path#g&quot; /etc/my.cnf
+    #mysql数据存放路径
+    sed -i &quot;s#&#123;&#123;mysql_path_data&#125;&#125;#$mysql_path_data#g&quot; /etc/my.cnf
+</code></pre>
+
       
     </div>
 
@@ -555,7 +578,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="站点阅读时长">33 分钟</span>
+    <span title="站点阅读时长">34 分钟</span>
   </span>
 </div>
   <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
