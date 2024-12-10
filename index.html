@@ -164,6 +164,50 @@
 
           <div class="content index posts-expand">
             
+
+	<div class="tag-cloud">
+	  <div class="tag-cloud-tags" id="tags">
+		<a href="/tags/Doker/" style="font-size: 16px; color: #fff">Doker</a> <a href="/tags/linux/" style="font-size: 16px; color: #fff">linux</a> <a href="/tags/redis/" style="font-size: 16px; color: #fff">redis</a> <a href="/tags/test/" style="font-size: 16px; color: #fff">test</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 16px; color: #fff">服务器</a> <a href="/tags/%E7%9E%AC%E5%AE%89/" style="font-size: 16px; color: #fff">瞬安</a> <a href="/tags/%E9%9A%A7%E9%81%93-%E6%B5%81%E9%87%8F%E4%BB%A3%E7%90%86/" style="font-size: 16px; color: #fff">隧道 流量代理</a>
+	  </div>
+	</div>
+	<br>
+	
+	<script type="text/javascript">
+     var alltags = document.getElementsByClassName('tag-cloud-tags');
+     var tags = alltags[0].getElementsByTagName('a');
+     for (var i = tags.length - 1; i >= 0; i--) {
+       var r=Math.floor(Math.random()*75+130);
+       var g=Math.floor(Math.random()*75+100);
+       var b=Math.floor(Math.random()*75+80);
+       tags[i].style.background = "rgb("+r+","+g+","+b+")";
+     }
+</script>
+
+<style>
+  .tag-cloud-tags{
+    /*font-family: Helvetica, Tahoma, Arial;*/
+    /*font-weight: 100;*/
+    text-align: center;
+    counter-reset: tags;
+  }
+  .tag-cloud-tags a{
+    border-radius: 6px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin: 8px 5px 0px 0px;
+  }
+  .tag-cloud-tags a:before{
+    content: "#";
+  }
+
+  .tag-cloud-tags a:hover{
+     box-shadow: 0px 5px 15px 0px rgba(0,0,0,.4);
+     transform: scale(1.1);
+     /*box-shadow: 10px 10px 15px 2px rgba(0,0,0,.12), 0 0 6px 0 rgba(104, 104, 105, 0.1);*/
+     transition-duration: 0.15s;
+  }
+</style>
+
       
   
   
@@ -193,7 +237,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-12-09 09:28:40 / 修改时间：09:56:22" itemprop="dateCreated datePublished" datetime="2024-12-09T09:28:40+08:00">2024-12-09</time>
+              <time title="创建时间：2024-12-09 09:28:40 / 修改时间：10:48:45" itemprop="dateCreated datePublished" datetime="2024-12-09T09:28:40+08:00">2024-12-09</time>
             </span>
 
           <br>
@@ -225,29 +269,14 @@
 <li>在cmd命令窗口中输入<code>netstat -ano | findstr &quot;目标IP&quot;</code>，回车可以看到与目标IP建立连接<code>ESTABLISHED</code>的进程PID</li>
 </ol>
 <p>例如：查看访问180.101.50.242这个IP的进程PID是什么</p>
-<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde5eac4aa4bf461a365b829a8ee3c0c8ae54a94cefac92b8e65cb439828991d341739e8703ac5556d0d0cfecd3502befe873258b6e7c5d33e5f74e09de5aacd8d77e8b2d283a3b949177bc1a7fdba5cce11b3abfb274f4d23ce?tmpCode=272ed91f-1cc5-4b26-886d-552c2bfad0a1" alt="img"></p>
-<ol>
-<li>根据进程PID，使用命令<code>netstat -ano | findstr &quot;进程PID&quot;</code>确认PID所属进程名称</li>
-</ol>
-<p>例如这里PID进程24480的进程名是XSHELL</p>
-<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde5eac4aa4bf461a365b829a8ee3c0c8ae54a94cefac92b8e65cb439828991d341739e8703ac5556d0d01b1267c3bf01f6b8dbb3a6b8c412c4068ff6d55f88927267388aa99a3741cb8f24c2eb0743709ee226d207b7aba77fe?tmpCode=272ed91f-1cc5-4b26-886d-552c2bfad0a1" alt="img"></p>
-<ol>
-<li>根据进程名称确认是什么应用或服务</li>
-</ol>
-<h2 id="Linux主机进程定位："><a href="#Linux主机进程定位：" class="headerlink" title="Linux主机进程定位："></a><strong>Linux主机进程定位：</strong></h2><ol>
-<li>确认正在连接的IP地址的进程PID<code>netstat -tunlp |grep  &quot;IP地址&quot;</code>  显示 tcp，udp 的进程PID</li>
-</ol>
-<p>例如：查看访问180.101.50.242的443端口的进程PID是13791</p>
-<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde5eac4aa4bf461a365b829a8ee3c0c8ae54a94cefac92b8e65cb439828991d341739e8703ac5556d0d9ee140ef6aca9088dadf70ba83ce56fa0e6587355416a12e7023db6f506c1edb5e03dd050817a36dfc1f9319315e029e?tmpCode=272ed91f-1cc5-4b26-886d-552c2bfad0a1" alt="img"></p>
-<ol>
-<li>查看进程PID是什么服务<code>ps -ef | grep &quot;进程PID&quot;</code>，</li>
-</ol>
-<p>例如：查看13791的PID进程是telnet服务</p>
-<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde5eac4aa4bf461a365b829a8ee3c0c8ae54a94cefac92b8e65cb439828991d341739e8703ac5556d0d43577abd9009d4faa656f413c8862993ae9c91c7d2545b6a4a7f901a4785f8d95d664ef799514a765455b02607965936?tmpCode=272ed91f-1cc5-4b26-886d-552c2bfad0a1" alt="img"></p>
-<ol>
-<li>根据进程名称确认是什么应用或服务</li>
-</ol>
-
+          <!--noindex-->
+            <div class="post-button">
+              <a class="btn" href="/2024/12/09/test/#more" rel="contents">
+                阅读全文 &raquo;
+              </a>
+            </div>
+          <!--/noindex-->
+        
       
     </div>
 
@@ -425,8 +454,704 @@
   
   
 
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/09/25/%E6%A8%A1%E6%9D%BF%E6%9C%BA%E9%83%A8%E7%BD%B2%EF%BC%88%E5%AD%90%E4%B8%BB%E5%B9%B3%E5%8F%B0%E9%83%A8%E7%BD%B2%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+      <meta itemprop="name" content="HWW">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/09/25/%E6%A8%A1%E6%9D%BF%E6%9C%BA%E9%83%A8%E7%BD%B2%EF%BC%88%E5%AD%90%E4%B8%BB%E5%B9%B3%E5%8F%B0%E9%83%A8%E7%BD%B2%EF%BC%89/" class="post-title-link" itemprop="url">模板机部署（子主平台部署）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-09-25 17:37:40" itemprop="dateCreated datePublished" datetime="2024-09-25T17:37:40+08:00">2024-09-25</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-09 17:38:22" itemprop="dateModified" datetime="2024-12-09T17:38:22+08:00">2024-12-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>8 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p><strong>关闭服务</strong></p>
+<p><strong>修改配置文件</strong></p>
+<p>PS：输入模板机之前的IP，输入新部署的服务器IP</p>
+<p><strong>恢复服务</strong></p>
+<p><strong>平台授权</strong></p>
+<p><strong>恢复sslcs授权服务</strong></p>
+<p>system restart sslcs</p>
+<p><strong>检查服务sslcs服务的进程和端口是否运行正常</strong></p>
+<p>ss -antup|grep 5500</p>
+<p>ps -ef|grep sslcs</p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde5166467cd145afb526cead5fab14cc1d34a94cefac92b8e65cb439828991d341739e8703ac5556d0d6cffc64ed03f28f81f933d0de59dc6bb218e0b3aa315616ac8e877dd8b985a9900588d53b7d568c80855a9d24ed2b28d?tmpCode=bc79a71a-0f33-48b9-b5e5-96d001e53ac9" alt="img"></p>
+<p><strong>网页访问平台5500端口授权，申请信息给@杭州瞬安</strong></p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde5166467cd145afb526cead5fab14cc1d34a94cefac92b8e65cb439828991d341739e8703ac5556d0ddc093a6749ce6a3366a3bff1e01747725d90cb50a72eea366acde7ef57a632d04c3f448ce080f409769ad1f4b6dff447?tmpCode=bc79a71a-0f33-48b9-b5e5-96d001e53ac9" alt="img"></p>
+<p><strong>杭州瞬安提供授权信息码授权</strong></p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde5166467cd145afb526cead5fab14cc1d34a94cefac92b8e65cb439828991d341739e8703ac5556d0d238eababefb5fa09322e7cd7a0696a99106f5a1ba5edb839d160521c67c5f8c89fcbb2379cca15e7a4e06c67c1f30cec?tmpCode=bc79a71a-0f33-48b9-b5e5-96d001e53ac9" alt="img"></p>
+<p><strong>网络测试开通</strong></p>
+<p>主节点：渠道平台IP</p>
+<p>分节点：客户平台IP</p>
+<p><strong>需渠道协调开通网络策略</strong></p>
+<p>主节点出口IP -&gt; 47.121.113.94【单向访问】443(TCP)，3478(UDP)，49152&#x2F;65535(UDP)</p>
+<p>分节点出口IP -&gt; 47.121.113.94【单向访问】443(TCP)，3478(UDP)，49152&#x2F;65535(UDP)</p>
+<p>主节点出口IP -&gt; 分节点出口IP【单向访问】UDP全开，TCP全开</p>
+<p>分节点出口IP -&gt; 主节点出口IP【单向访问】UDP全开，TCP全开</p>
+<p><strong>配置服务</strong></p>
+<p>网络策略开通后，由@刘志国@张文博(文博)配置1、2两步骤给出KEY之后，从第3步骤开始执行</p>
+<p><strong>登录netbird</strong>（暂时@刘志国@张文博(文博)有权限<strong>）</strong></p>
+<p><a target="_blank" rel="noopener" href="https://x.ss94.shunsec.com/">https://x.ss94.shunsec.com/</a></p>
+<p><strong>创建KEY，KEY要复制出来保存：Setup Keys -&gt; Create Setup Key</strong></p>
+<p>主平台、分平台各自注册一个</p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde54f6334993483e78e14d84406e6da15a64a94cefac92b8e65cb439828991d341739e8703ac5556d0d21236fd7bb9616733df756d3b5b18b7783e1ba91ea5ae4cf60ba67cf7d2ff90d8249437019032632f45cdb6181ce391e?tmpCode=bc79a71a-0f33-48b9-b5e5-96d001e53ac9" alt="img"></p>
+<p><strong>Auto-assigned groups</strong>创建命名方式：输入名称后回车创建</p>
+<p>主平台：渠道名称-M</p>
+<p>分平台：渠道名称-S</p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde54f6334993483e78e14d84406e6da15a64a94cefac92b8e65cb439828991d341739e8703ac5556d0d4d760f6d709fd6c978d8a930e7017398cf01cdc6b2539f8d41cc25aced64c6fb888df058d3fd48c862a66fce3879c4b3?tmpCode=bc79a71a-0f33-48b9-b5e5-96d001e53ac9" alt="img"></p>
+<p><strong>添加访问策略：Access Control -&gt; Policies -&gt; Add Policy，命名为渠道名称</strong></p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde54f6334993483e78e14d84406e6da15a64a94cefac92b8e65cb439828991d341739e8703ac5556d0d1ace3178a4e9505a6b97a21b4ab1a14cce3d180fb0b9f42a6207cc4973b1227301611d4fd6c8ce92c4f35c0a4653baad?tmpCode=bc79a71a-0f33-48b9-b5e5-96d001e53ac9" alt="img"></p>
+<p><strong>注册认证服务，在主平台、分平台服务器上（<strong><strong>KEY不能重复用于其他平台，只针对当前平台使用</strong></strong>）</strong></p>
+<p>安装xsetnet服务</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"># 安装服务</span><br><span class="line">#安装包解压后，选择rpm包安装</span><br><span class="line">yum localinstall xsetnet_0.1.0_linux_amd64.rpm</span><br><span class="line">xsetnet service install</span><br><span class="line">xsetnet service start</span><br><span class="line"></span><br><span class="line"># 注册服务（需提前申请setup-key)，主机配置DNS</span><br><span class="line">xsetnet up --setup-key FEE0CF64-9877-46AE-8FFC-EC40XXXXXX56</span><br></pre></td></tr></table></figure>
+
+<p>主平台注册：xsetnet up –setup-key 0D7E2FF0-964B-40A2-BFBC-017094586D8F</p>
+<p>分平台注册：xsetnet up –setup-key A1061841-8A4D-45E2-B705-00943BA8E8CF</p>
+<p>注册成功会返回<strong>Connected</strong></p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde54f6334993483e78e14d84406e6da15a64a94cefac92b8e65cb439828991d341739e8703ac5556d0d59ac59522660f6b063813ac1cacd2088dad19fada76c0f0fbe2fdf0e15509952140c2b89b706900ddcc60117689e6ba7?tmpCode=bc79a71a-0f33-48b9-b5e5-96d001e53ac9" alt="img"></p>
+<p>注册都成功后，在netbird平台上查看 -&gt; Peers</p>
+<p><strong>修改nginx配置，在主平台修改</strong></p>
+<p>需要配置域名解析@刘志国</p>
+<p>解析渠道code 至 主平台nginx所在IP</p>
+<p>比如：*.xuanyang 解析至炫阳主平台nginx所在IP</p>
+<h5 id="HTTP方式："><a href="#HTTP方式：" class="headerlink" title="HTTP方式："></a><strong>HTTP方式：</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line">#nginx.conf修改内容</span><br><span class="line">server_name  &#123;子区域CODE&#125;.&#123;渠道CODE&#125;.x-sec.tech;</span><br><span class="line">access_log  /var/log/nginx/&#123;子区域CODE&#125;.&#123;渠道CODE&#125;.access.log;</span><br><span class="line">proxy_pass http://&#123;子区域100IP&#125;$request_uri;</span><br><span class="line">#例如:子区域CODE：s01</span><br><span class="line">#例如：渠道CODE：xuanyang</span><br><span class="line">#例如：子区域100IP：需要@刘志国确认</span><br><span class="line">server &#123;</span><br><span class="line">    listen       80;</span><br><span class="line">    listen       [::]:80;</span><br><span class="line">    server_name  s01.xuanyang.x-sec.tech;</span><br><span class="line">    access_log  /var/log/nginx/&#123;子区域CODE&#125;.&#123;渠道CODE&#125;.access.log;</span><br><span class="line">    </span><br><span class="line">    root         /home/astrolabe-ui/static_root;</span><br><span class="line"></span><br><span class="line">    location / &#123;</span><br><span class="line">        # kill cache</span><br><span class="line">        add_header Last-Modified $date_gmt;</span><br><span class="line">        add_header Cache-Control &#x27;no-store, no-cache&#x27;;</span><br><span class="line">        if_modified_since off;</span><br><span class="line">        expires off;</span><br><span class="line">        etag off;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    location ~^/(a|edm)/ &#123;</span><br><span class="line">      proxy_set_header Host $host;</span><br><span class="line">      proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">      proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">      proxy_http_version 1.1;</span><br><span class="line">      proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">      proxy_set_header Connection &#x27;upgrade&#x27;;</span><br><span class="line">      proxy_pass http://100.74.134.240$request_uri;</span><br><span class="line">   &#125;</span><br><span class="line"></span><br><span class="line">  error_page 404 /404.html;</span><br><span class="line">  location = /404.html &#123;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  error_page 500 502 503 504 /50x.html;</span><br><span class="line">  location = /50x.html &#123;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde54f6334993483e78e14d84406e6da15a64a94cefac92b8e65cb439828991d341739e8703ac5556d0d0ac92b56c5c57a36ffdc53ceab95456bdc0c9cefcb874e20902a60d22bd78ffcad58303d9efe545b4ccb339b26baf4ec?tmpCode=bc79a71a-0f33-48b9-b5e5-96d001e53ac9" alt="img"></p>
+<h5 id="HTTPS方式："><a href="#HTTPS方式：" class="headerlink" title="HTTPS方式："></a><strong>HTTPS方式：</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line">#nginx.conf修改内容</span><br><span class="line">server_name  &#123;子区域CODE&#125;.&#123;渠道CODE&#125;.x-sec.tech;</span><br><span class="line">access_log  /var/log/nginx/&#123;子区域CODE&#125;.&#123;渠道CODE&#125;.access.log;</span><br><span class="line">proxy_pass http://&#123;子区域100IP&#125;$request_uri;</span><br><span class="line">#子区域CODE：s01</span><br><span class="line">#渠道CODE：xuanyang</span><br><span class="line">#子区域100IP：需要@刘志国确认</span><br><span class="line">##配置访问子平台域名</span><br><span class="line">  server &#123;</span><br><span class="line">    # HTTPS server block configuration</span><br><span class="line">    listen 443 ssl;</span><br><span class="line">    server_name  s01.xuanyang.x-sec.tech;</span><br><span class="line">    root  /home/data/astrolabe-ui/static_root;</span><br><span class="line">    access_log  /var/log/nginx/&#123;子区域CODE&#125;.&#123;渠道CODE&#125;.access.log;</span><br><span class="line"></span><br><span class="line">    ssl_certificate /usr/local/nginx/server.crt;</span><br><span class="line">    ssl_certificate_key /usr/local/nginx/server.key;</span><br><span class="line">    # SSL configuration goes here</span><br><span class="line"></span><br><span class="line">          location / &#123;</span><br><span class="line">                # kill cache</span><br><span class="line">                add_header Last-Modified $date_gmt;</span><br><span class="line">                add_header Cache-Control &#x27;no-store, no-cache&#x27;;</span><br><span class="line">                if_modified_since off;</span><br><span class="line">                expires off;</span><br><span class="line">                etag off;</span><br><span class="line"></span><br><span class="line">                # simple no cache</span><br><span class="line">                # expires -1;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          location ~^/(a|edm)/ &#123;</span><br><span class="line">              proxy_set_header Host $host;</span><br><span class="line">              proxy_set_header X-Real-IP $remote_addr;</span><br><span class="line">              proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;</span><br><span class="line">              proxy_http_version 1.1;</span><br><span class="line">              proxy_set_header Upgrade $http_upgrade;</span><br><span class="line">              proxy_set_header Connection &#x27;upgrade&#x27;;</span><br><span class="line">              proxy_pass https://100.74.225.202$request_uri;</span><br><span class="line">           &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">          error_page 404 /404.html;</span><br><span class="line">          location = /404.html &#123;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">          error_page 500 502 503 504 /50x.html;</span><br><span class="line">          location = /50x.html &#123;</span><br><span class="line">          &#125;</span><br><span class="line"></span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>添加客户配置到多租户管理</strong></p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO astrolabe.sys_tenement (id, name, code, ip, url, created_by, created_date, last_modified_by,</span><br><span class="line">                                    last_modified_date, description, version, del_flag)</span><br><span class="line">VALUES (null, &#x27;租户名称&#x27;, &#x27;租户code 默认是 SYS_TENEMENT&#x27;, &#x27;租户代理访问地址&#x27;, &#x27;/#/gjkb/aqwx&#x27;, &#x27;admin&#x27;,</span><br><span class="line">        now(), null, null, null, 0, &#x27;0&#x27;);</span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<p><strong>租户名称：</strong>客户名称（万事利集团有限公司）</p>
+<p><strong>租户code：</strong>子区域CODE（s01）</p>
+<p><strong>租户代理访问地址：</strong>server_name值（s01.xuanyuan.x-sec.tech)</p>
+<h5 id="域名方式："><a href="#域名方式：" class="headerlink" title="域名方式："></a><strong>域名方式：</strong></h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">INSERT INTO astrolabe.sys_tenement (id, name, code, ip, url, created_by, created_date, last_modified_by,</span><br><span class="line">                                    last_modified_date, description, version, del_flag)</span><br><span class="line">VALUES (null, &#x27;万事利集团有限公司&#x27;, &#x27;s01&#x27;, &#x27;s01.xuanyuan.x-sec.tech&#x27;, &#x27;/#/gjkb/aqwx&#x27;, &#x27;admin&#x27;,</span><br><span class="line">        now(), null, null, null, 0, &#x27;0&#x27;);</span><br></pre></td></tr></table></figure>
+
+
+
+<p><strong>执行后报错：ERROR 1048 (23000): Column ‘id’ cannot be null</strong></p>
+<p>解决：执行修改SQL：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">alter table sys_tenement modify id int auto_increment comment &#x27;租户ID&#x27;;</span><br><span class="line">alter table sys_tenement auto_increment = 1;</span><br></pre></td></tr></table></figure>
+
+<p>再次执行SQL添加配置</p>
+<p><strong>测试</strong></p>
+<ol>
+<li>浏览器访问：<a target="_blank" rel="noopener" href="https://s01.客户code.x-sec.tech/">https://s01.客户code.x-sec.tech</a></li>
+</ol>
+<p>如果访问不成功，@刘志国配置dns解析，*.客户code 解析至主平台nginx</p>
+<ol>
+<li>主平台中跳转</li>
+</ol>
+<p><strong>配置完成</strong></p>
+<h4 id="主平台"><a href="#主平台" class="headerlink" title="主平台"></a><strong>主平台</strong></h4><p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde54f6334993483e78e14d84406e6da15a64a94cefac92b8e65cb439828991d341739e8703ac5556d0d2c56e705bbee31f0588cf06131ddf9d5b6f495f75a218d743391cce736df7bdd99529384892e243f24478e03baba94f5?tmpCode=bc79a71a-0f33-48b9-b5e5-96d001e53ac9" alt="img"></p>
+<h4 id="分平台"><a href="#分平台" class="headerlink" title="分平台"></a><strong>分平台</strong></h4><p>点击访问平台后跳转至分平台</p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde54f6334993483e78e14d84406e6da15a64a94cefac92b8e65cb439828991d341739e8703ac5556d0de37285f91fe12fc93e021bd3a9698e21b123cd30e10d5365f88f8f6dce6a6fe6fd9d1a147ff03fe00ac21faf101fc298?tmpCode=bc79a71a-0f33-48b9-b5e5-96d001e53ac9" alt="img"></p>
+<p>主平台可查看处置分平台产生的告警</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/08/01/yun-install-%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+      <meta itemprop="name" content="HWW">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/08/01/yun-install-%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" class="post-title-link" itemprop="url">yun install 安装失败问题</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-08-01 17:34:35" itemprop="dateCreated datePublished" datetime="2024-08-01T17:34:35+08:00">2024-08-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-09 17:34:59" itemprop="dateModified" datetime="2024-12-09T17:34:59+08:00">2024-12-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.9k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>4 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>yum install 失败</p>
+<p><strong>确保通外网</strong></p>
+<p>看看能不能ping通8.8.8.8 或者ping <a target="_blank" rel="noopener" href="http://www.baidu.com/">www.baidu.com</a></p>
+<p><strong>设置DNS服务器</strong></p>
+<p>vim &#x2F;etc&#x2F;resolv.conf </p>
+<p>nameserver 8.8.8.8</p>
+<p>nameserver 114.114.114.114</p>
+<p><strong>如果还是yum install 失败</strong></p>
+<p><strong>换yum源</strong></p>
+<p>mkdir  &#x2F;etc&#x2F;yum.repo.d&#x2F;bak&#x2F;</p>
+<p>mv &#x2F;etc&#x2F;yum.repos.d&#x2F;Centos-*  &#x2F;etc&#x2F;yum.repo.d&#x2F;bak&#x2F;</p>
+<p>vi &#x2F;etc&#x2F;yum.repos.d&#x2F;CentOS-Base.repo</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line"># CentOS-Base.repo</span><br><span class="line">#</span><br><span class="line"># The mirror system uses the connecting IP address of the client and the</span><br><span class="line"># update status of each mirror to pick mirrors that are updated to and</span><br><span class="line"># geographically close to the client.  You should use this for CentOS updates</span><br><span class="line"># unless you are manually picking other mirrors.</span><br><span class="line">#</span><br><span class="line"># If the mirrorlist= does not work for you, as a fall back you can try the</span><br><span class="line"># remarked out baseurl= line instead.</span><br><span class="line">#</span><br><span class="line">#</span><br><span class="line"> </span><br><span class="line">[base]</span><br><span class="line">name=CentOS-$releasever - Base</span><br><span class="line">#mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=os</span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/$releasever/os/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#released updates</span><br><span class="line">[updates]</span><br><span class="line">name=CentOS-$releasever - Updates</span><br><span class="line"># mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=updates</span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/$releasever/updates/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#additional packages that may be useful</span><br><span class="line">[extras]</span><br><span class="line">name=CentOS-$releasever - Extras</span><br><span class="line"># mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=extras</span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/$releasever/extras/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br><span class="line"> </span><br><span class="line">#additional packages that extend functionality of existing packages</span><br><span class="line">[centosplus]</span><br><span class="line">name=CentOS-$releasever - Plus</span><br><span class="line"># mirrorlist=http://mirrorlist.centos.org/?release=$releasever&amp;arch=$basearch&amp;repo=centosplus</span><br><span class="line">baseurl=https://mirrors.ustc.edu.cn/centos/$releasever/centosplus/$basearch/</span><br><span class="line">gpgcheck=1</span><br><span class="line">enabled=0</span><br><span class="line">gpgkey=file:///etc/pki/rpm-gpg/RPM-GPG-KEY-CentOS-7</span><br></pre></td></tr></table></figure>
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/06/14/tmux%E4%BD%BF%E7%94%A8/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+      <meta itemprop="name" content="HWW">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/06/14/tmux%E4%BD%BF%E7%94%A8/" class="post-title-link" itemprop="url">tmux使用</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-06-14 17:33:28" itemprop="dateCreated datePublished" datetime="2024-06-14T17:33:28+08:00">2024-06-14</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-09 17:35:21" itemprop="dateModified" datetime="2024-12-09T17:35:21+08:00">2024-12-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>130</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <ol>
+<li>创建会话</li>
+</ol>
+<p>tmux new -s 会话名</p>
+<ol>
+<li>推出会话</li>
+</ol>
+<p>ctrl＋b  d</p>
+<ol>
+<li>查看会话列表</li>
+</ol>
+<p>tmux ls</p>
+<ol>
+<li>如果是在某个会话环境中想查看会话列表，然后用键盘选择就可进入（切换会话）</li>
+</ol>
+<p>ctrl ＋b  s</p>
+<ol>
+<li>命令可以查看当前所有的 Tmux 会话</li>
+</ol>
+<p>tmux ls</p>
+<p>6.杀死会话</p>
+<p>tmux kill-session -t 0</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/10/%E4%BF%AE%E6%94%B9redis%E9%85%8D%E7%BD%AE%E5%86%85%E5%AD%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+      <meta itemprop="name" content="HWW">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/05/10/%E4%BF%AE%E6%94%B9redis%E9%85%8D%E7%BD%AE%E5%86%85%E5%AD%98/" class="post-title-link" itemprop="url">修改redis配置内存</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-05-10 17:39:07" itemprop="dateCreated datePublished" datetime="2024-05-10T17:39:07+08:00">2024-05-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-09 18:11:27" itemprop="dateModified" datetime="2024-12-09T18:11:27+08:00">2024-12-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>252</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h2 id="1-查看redis配置文件内存"><a href="#1-查看redis配置文件内存" class="headerlink" title="1.查看redis配置文件内存"></a><strong>1.查看redis配置文件内存</strong></h2><p>vim &#x2F;etc&#x2F;redis&#x2F;redis.conf</p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde5fe9996a9039d0b9aeb169bdc0e7cd1124a94cefac92b8e65cb439828991d341739e8703ac5556d0ded79549f5047a51a4cedd33f3e446f5ea3870c80af8eccff4476502cc1ffb9e73cb7e72f56be19c4ee2fec6b24ee52f7?tmpCode=987084f1-4359-4853-bc6a-a66ac86434b6" alt="img"></p>
+<h2 id="2-查看redis运行占用内存"><a href="#2-查看redis运行占用内存" class="headerlink" title="2.查看redis运行占用内存"></a><strong>2.查看redis运行占用内存</strong></h2><p>2.1reids登录</p>
+<p>redis-cli -h 192.168.50.20 </p>
+<p>2.2输入密码</p>
+<p>auth zd05xf7u2LAmWeol</p>
+<p>2.3info查看reids信息</p>
+<p>info</p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde5fe9996a9039d0b9aeb169bdc0e7cd1124a94cefac92b8e65cb439828991d341739e8703ac5556d0d1812c44eb844829b27ee46b819ff671b08bd451a3c7b8ed12d0625a95a7318d2892c672426461d02bcb03efae328c241?tmpCode=987084f1-4359-4853-bc6a-a66ac86434b6" alt="img"></p>
+<h2 id="3-修改redis配置文件maxmemory大小"><a href="#3-修改redis配置文件maxmemory大小" class="headerlink" title="3.修改redis配置文件maxmemory大小"></a><strong>3.修改redis配置文件maxmemory大小</strong></h2><p>redis配置文件max大小需要大于info的maxmemory大小</p>
+<p><img src="https://alidocs.dingtalk.com/core/api/resources/img/5eecdaf48460cde5fe9996a9039d0b9aeb169bdc0e7cd1124a94cefac92b8e65cb439828991d341739e8703ac5556d0dd2a47a113d102b8c1688a0805b63abcd20f1df54f3d230fcb5048b802ef82cb0484f647d39673f0e1343a1629b8e6672?tmpCode=987084f1-4359-4853-bc6a-a66ac86434b6" alt="img"></p>
+<h2 id="4-修改好重启redis服务"><a href="#4-修改好重启redis服务" class="headerlink" title="4.修改好重启redis服务"></a>4.修改好重启redis服务</h2><p>sysytemctl restart redis.service</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/28/%E5%88%B6%E4%BD%9C%E7%A6%BB%E7%BA%BFyum%E6%BA%90%EF%BC%88unzip%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+      <meta itemprop="name" content="HWW">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/04/28/%E5%88%B6%E4%BD%9C%E7%A6%BB%E7%BA%BFyum%E6%BA%90%EF%BC%88unzip%EF%BC%89/" class="post-title-link" itemprop="url">制作离线yum源（unzip）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-04-28 17:30:46" itemprop="dateCreated datePublished" datetime="2024-04-28T17:30:46+08:00">2024-04-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-09 17:35:29" itemprop="dateModified" datetime="2024-12-09T17:35:29+08:00">2024-12-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>186</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="制作yum源"><a href="#制作yum源" class="headerlink" title="制作yum源"></a><strong>制作yum源</strong></h1><p>首先在一台能够通外网的服务器上</p>
+<p>yum intall createrope</p>
+<p>yum intall repotrack </p>
+<p>repotrack</p>
+<p> &#x2F;usr&#x2F;bin&#x2F;repotrack -p &#x2F;root&#x2F;unzip</p>
+<h1 id="忽视依赖包直接安装unzip"><a href="#忽视依赖包直接安装unzip" class="headerlink" title="忽视依赖包直接安装unzip"></a><strong>忽视依赖包直接安装unzip</strong></h1><p>rpm -Uvh –nodeps unzip-6.00-150000.4.11.1.x86_64.rpm</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/03/27/%E6%B5%81%E9%87%8F%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91-%E9%9A%A7%E9%81%93%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+      <meta itemprop="name" content="HWW">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/03/27/%E6%B5%81%E9%87%8F%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91-%E9%9A%A7%E9%81%93%EF%BC%89/" class="post-title-link" itemprop="url">流量代理转发(隧道）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-03-27 17:29:46" itemprop="dateCreated datePublished" datetime="2024-03-27T17:29:46+08:00">2024-03-27</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-09 17:35:47" itemprop="dateModified" datetime="2024-12-09T17:35:47+08:00">2024-12-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>243</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <p>场景：我用vpn，这个vpn不断网络，可以windows下</p>
+<p>在cmd下ssh -R  52000 10.20.1.200  <a href="mailto:&#114;&#x6f;&#111;&#116;&#x40;&#x31;&#x39;&#x32;&#46;&#49;&#54;&#x38;&#46;&#x35;&#48;&#46;&#x36;&#x31;">&#114;&#x6f;&#111;&#116;&#x40;&#x31;&#x39;&#x32;&#46;&#49;&#54;&#x38;&#46;&#x35;&#48;&#46;&#x36;&#x31;</a></p>
+<p>转发10.20.1.200的5200端口的流量到192.168.50.61这台机器</p>
+<p>就可以用192.168.50.61这台机器ssh访问到10.20.1.200的5200端口</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/02/Docker%E7%9F%A5%E8%AF%86/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+      <meta itemprop="name" content="HWW">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/02/02/Docker%E7%9F%A5%E8%AF%86/" class="post-title-link" itemprop="url">Docker知识</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-02-02 17:28:37" itemprop="dateCreated datePublished" datetime="2024-02-02T17:28:37+08:00">2024-02-02</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-09 17:36:03" itemprop="dateModified" datetime="2024-12-09T17:36:03+08:00">2024-12-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>215</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="查看镜像"><a href="#查看镜像" class="headerlink" title="查看镜像"></a><strong>查看镜像</strong></h1><p>docker images</p>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/QvjnAAY4yPZBnXo5/img/c0770355-8083-4171-a8e9-043f14f1eeec.png" alt="img"></p>
+<h1 id="进入镜像"><a href="#进入镜像" class="headerlink" title="进入镜像"></a><strong>进入镜像</strong></h1><p>docker run -it –rm sspy:v1.0 &#x2F;bin&#x2F;bash           进入 sspy镜像空间</p>
+<h1 id="查看启动的容器"><a href="#查看启动的容器" class="headerlink" title="查看启动的容器"></a><strong>查看启动的容器</strong></h1><h2 id="只能看到已启动的容器"><a href="#只能看到已启动的容器" class="headerlink" title="只能看到已启动的容器"></a><strong>只能看到已启动的容器</strong></h2><p>docker ps</p>
+<h2 id="查看所有的容器"><a href="#查看所有的容器" class="headerlink" title="查看所有的容器"></a><strong>查看所有的容器</strong></h2><p>docker ps a</p>
+<h1 id="销毁没有挂载的镜像"><a href="#销毁没有挂载的镜像" class="headerlink" title="销毁没有挂载的镜像"></a>销毁没有挂载的镜像</h1><p>docker container prune</p>
+<h1 id="暂停镜像"><a href="#暂停镜像" class="headerlink" title="暂停镜像"></a><strong>暂停镜像</strong></h1><p>docker stop</p>
+<h2 id="Linux-终端中使用以下命令来查找-request-库的安装位置"><a href="#Linux-终端中使用以下命令来查找-request-库的安装位置" class="headerlink" title="Linux 终端中使用以下命令来查找 request 库的安装位置"></a><strong>Linux 终端中使用以下命令来查找 request 库的安装位置</strong></h2><p>pip show requests | grep Location</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
 
   
+  <nav class="pagination">
+    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+  </nav>
 
 
 
@@ -493,14 +1218,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">3</span>
+          <span class="site-state-item-count">11</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">2</span>
+        <span class="site-state-item-count">7</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>

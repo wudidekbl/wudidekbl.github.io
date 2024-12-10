@@ -23,27 +23,27 @@
   <meta name="description" content="Do not go gentle into that good night">
 <meta property="og:type" content="website">
 <meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://example.com/archives/index.html">
+<meta property="og:url" content="http://example.com/page/2/index.html">
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="Do not go gentle into that good night">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:author" content="HWW">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/archives/">
+<link rel="canonical" href="http://example.com/page/2/">
 
 
 <script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
-    isHome : false,
+    isHome : true,
     isPost : false,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>归档 | Hexo</title>
+  <title>Hexo</title>
   
 
 
@@ -162,233 +162,157 @@
         <div class="content-wrap">
           
 
-          <div class="content archive">
+          <div class="content index posts-expand">
             
 
-  
-  
-  
-  <div class="post-block">
-    <div class="posts-collapse">
-      <div class="collection-title">
-        <span class="collection-header">嗯..! 目前共计 11 篇日志。 继续努力。</span>
-      </div>
+	<div class="tag-cloud">
+	  <div class="tag-cloud-tags" id="tags">
+		<a href="/tags/Doker/" style="font-size: 16px; color: #fff">Doker</a> <a href="/tags/linux/" style="font-size: 16px; color: #fff">linux</a> <a href="/tags/redis/" style="font-size: 16px; color: #fff">redis</a> <a href="/tags/test/" style="font-size: 16px; color: #fff">test</a> <a href="/tags/%E6%9C%8D%E5%8A%A1%E5%99%A8/" style="font-size: 16px; color: #fff">服务器</a> <a href="/tags/%E7%9E%AC%E5%AE%89/" style="font-size: 16px; color: #fff">瞬安</a> <a href="/tags/%E9%9A%A7%E9%81%93-%E6%B5%81%E9%87%8F%E4%BB%A3%E7%90%86/" style="font-size: 16px; color: #fff">隧道 流量代理</a>
+	  </div>
+	</div>
+	<br>
+	
+	<script type="text/javascript">
+     var alltags = document.getElementsByClassName('tag-cloud-tags');
+     var tags = alltags[0].getElementsByTagName('a');
+     for (var i = tags.length - 1; i >= 0; i--) {
+       var r=Math.floor(Math.random()*75+130);
+       var g=Math.floor(Math.random()*75+100);
+       var b=Math.floor(Math.random()*75+80);
+       tags[i].style.background = "rgb("+r+","+g+","+b+")";
+     }
+</script>
+
+<style>
+  .tag-cloud-tags{
+    /*font-family: Helvetica, Tahoma, Arial;*/
+    /*font-weight: 100;*/
+    text-align: center;
+    counter-reset: tags;
+  }
+  .tag-cloud-tags a{
+    border-radius: 6px;
+    padding-right: 5px;
+    padding-left: 5px;
+    margin: 8px 5px 0px 0px;
+  }
+  .tag-cloud-tags a:before{
+    content: "#";
+  }
+
+  .tag-cloud-tags a:hover{
+     box-shadow: 0px 5px 15px 0px rgba(0,0,0,.4);
+     transform: scale(1.1);
+     /*box-shadow: 10px 10px 15px 2px rgba(0,0,0,.12), 0 0 6px 0 rgba(104, 104, 105, 0.1);*/
+     transition-duration: 0.15s;
+  }
+</style>
 
       
-    <div class="collection-year">
-      <span class="collection-header">2024</span>
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/12/%E6%88%B4%E5%B0%94DELL%E7%89%A9%E7%90%86%E6%9C%BA%E8%A3%85OpenEuler%E7%B3%BB%E7%BB%9F%EF%BC%88%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%95%9C%E5%83%8F%E6%96%B9%E5%BC%8F%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+      <meta itemprop="name" content="HWW">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2023/12/12/%E6%88%B4%E5%B0%94DELL%E7%89%A9%E7%90%86%E6%9C%BA%E8%A3%85OpenEuler%E7%B3%BB%E7%BB%9F%EF%BC%88%E7%AC%94%E8%AE%B0%E6%9C%AC%E9%95%9C%E5%83%8F%E6%96%B9%E5%BC%8F%EF%BC%89/" class="post-title-link" itemprop="url">戴尔DELL物理机装OpenEuler系统（笔记本镜像方式）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2023-12-12 17:27:12" itemprop="dateCreated datePublished" datetime="2023-12-12T17:27:12+08:00">2023-12-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-09 17:36:22" itemprop="dateModified" datetime="2024-12-09T17:36:22+08:00">2024-12-09</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>536</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <h1 id="记得网线要插带外卡iDRAC口"><a href="#记得网线要插带外卡iDRAC口" class="headerlink" title="记得网线要插带外卡iDRAC口"></a><strong>记得网线要插带外卡iDRAC口</strong></h1><p>物理机服务器最边上的网口</p>
+<h1 id="带外卡配置（配置外卡ip，用于笔记本连接物理机）"><a href="#带外卡配置（配置外卡ip，用于笔记本连接物理机）" class="headerlink" title="带外卡配置（配置外卡ip，用于笔记本连接物理机）"></a><strong>带外卡配置（配置外卡ip，用于笔记本连接物理机）</strong></h1><p>物理机直连 1.键盘2.显示器</p>
+<p>1.物理机开机</p>
+<p>2.F2进入system setup下的network设置带外卡ip</p>
+<h1 id="设置iRAID，（四块盘-2块900g的ssd，2块10t的sata盘，设置）提供冗余性和增加数据可靠性"><a href="#设置iRAID，（四块盘-2块900g的ssd，2块10t的sata盘，设置）提供冗余性和增加数据可靠性" class="headerlink" title="设置iRAID，（四块盘-2块900g的ssd，2块10t的sata盘，设置）提供冗余性和增加数据可靠性"></a><strong>设置iRAID，（四块盘-2块900g的ssd，2块10t的sata盘，设置）</strong>提供冗余性和增加数据可靠性</h1><p>1.先进入要把启动盘改成bios</p>
+<p>2.按F12进入fxe boot（F12 键时，计算机会在 POST（开机自检）期间显示一个菜单，列出可用的启动设备，例如硬盘驱动器、光盘驱动器、USB 驱动器等。通过选择其中一个设备，您可以将计算机从所选设备中引导，而不是从默认的启动设备）</p>
+<p>3.进去后ctr＋r进入RAID设置</p>
+<p>4.先把清除原来的配置</p>
+<p>5.把原本创建的盘给删除</p>
+<h2 id="四块盘做两个RAID1"><a href="#四块盘做两个RAID1" class="headerlink" title="四块盘做两个RAID1"></a><strong>四块盘做两个RAID1</strong></h2><p>两块盘做两个raid0</p>
+<h2 id="清除raid的位置"><a href="#清除raid的位置" class="headerlink" title="清除raid的位置"></a><strong>清除raid的位置</strong></h2><p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYVY9ZMVO8j9/img/6c9b645a-bd1b-4dcf-a8c0-1ecb44a7467b.png" alt="img"></p>
+<p>6.<img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYVY9ZMVO8j9/img/a21554ed-e4d6-4b15-a3c5-88d6021536de.png" alt="img"></p>
+<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/MAeqxYVY9ZMVO8j9/img/ee26c57f-d5cf-42d5-ae78-fdcdb2f1b5d1.png" alt="img"></p>
+<h1 id="连接笔记本，导入镜像，安装系统"><a href="#连接笔记本，导入镜像，安装系统" class="headerlink" title="连接笔记本，导入镜像，安装系统"></a><strong>连接笔记本，导入镜像，安装系统</strong></h1><ol>
+<li>f2把启动方式改回uefi （uefi页面是）</li>
+<li>把带外卡网线插入笔记本</li>
+</ol>
+<p>3.笔记本网页直接输入带外卡ip</p>
+<p>4.映射镜像</p>
+<p>5.网页冷启动</p>
+<p>6.f10进入Lifecycle Controller模式下的os deplayment</p>
+<p>7.设置镜像</p>
+<p>参考文档：<a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_43440135/article/details/127737124">戴尔R730服务器设置管理IP（iDRAC）和安装系统_idrac ip-CSDN博客</a></p>
+
+      
     </div>
 
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-12-09T09:28:40+08:00"
-              content="2024-12-09">
-          12-09
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/12/09/test/" itemprop="url">
-            <span itemprop="name">test</span>
-          </a>
-      </div>
-
-    </header>
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
   </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-12-06T18:23:11+08:00"
-              content="2024-12-06">
-          12-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/12/06/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E8%B6%85%E8%9E%8D%E5%90%88%E9%83%A8%E7%BD%B2%E7%B3%BB%E7%BB%9F/" itemprop="url">
-            <span itemprop="name">深信服超融合部署系统</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-12-06T15:17:03+08:00"
-              content="2024-12-06">
-          12-06
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/12/06/hello-world/" itemprop="url">
-            <span itemprop="name">Hello World</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-09-25T17:37:40+08:00"
-              content="2024-09-25">
-          09-25
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/09/25/%E6%A8%A1%E6%9D%BF%E6%9C%BA%E9%83%A8%E7%BD%B2%EF%BC%88%E5%AD%90%E4%B8%BB%E5%B9%B3%E5%8F%B0%E9%83%A8%E7%BD%B2%EF%BC%89/" itemprop="url">
-            <span itemprop="name">模板机部署（子主平台部署）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-08-01T17:34:35+08:00"
-              content="2024-08-01">
-          08-01
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/08/01/yun-install-%E5%AE%89%E8%A3%85%E5%A4%B1%E8%B4%A5%E9%97%AE%E9%A2%98/" itemprop="url">
-            <span itemprop="name">yun install 安装失败问题</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-06-14T17:33:28+08:00"
-              content="2024-06-14">
-          06-14
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/06/14/tmux%E4%BD%BF%E7%94%A8/" itemprop="url">
-            <span itemprop="name">tmux使用</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-05-10T17:39:07+08:00"
-              content="2024-05-10">
-          05-10
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/05/10/%E4%BF%AE%E6%94%B9redis%E9%85%8D%E7%BD%AE%E5%86%85%E5%AD%98/" itemprop="url">
-            <span itemprop="name">修改redis配置内存</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-04-28T17:30:46+08:00"
-              content="2024-04-28">
-          04-28
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/04/28/%E5%88%B6%E4%BD%9C%E7%A6%BB%E7%BA%BFyum%E6%BA%90%EF%BC%88unzip%EF%BC%89/" itemprop="url">
-            <span itemprop="name">制作离线yum源（unzip）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-03-27T17:29:46+08:00"
-              content="2024-03-27">
-          03-27
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/03/27/%E6%B5%81%E9%87%8F%E4%BB%A3%E7%90%86%E8%BD%AC%E5%8F%91-%E9%9A%A7%E9%81%93%EF%BC%89/" itemprop="url">
-            <span itemprop="name">流量代理转发(隧道）</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-  <article itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
-
-      <div class="post-meta">
-        <time itemprop="dateCreated"
-              datetime="2024-02-02T17:28:37+08:00"
-              content="2024-02-02">
-          02-02
-        </time>
-      </div>
-
-      <div class="post-title">
-          <a class="post-title-link" href="/2024/02/02/Docker%E7%9F%A5%E8%AF%86/" itemprop="url">
-            <span itemprop="name">Docker知识</span>
-          </a>
-      </div>
-
-    </header>
-  </article>
-
-
-    </div>
-  </div>
   
   
   
+
 
   
   <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/archives/page/2/">2</a><a class="extend next" rel="next" href="/archives/page/2/"><i class="fa fa-angle-right" aria-label="下一页"></i></a>
+    <a class="extend prev" rel="prev" href="/"><i class="fa fa-angle-left" aria-label="上一页"></i></a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
   </nav>
 
 
