@@ -1,0 +1,532 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="1. 配置网络设置主机名：node1.domain250.example.com IP 地址：172.25.250.100 子网掩码 255.255.255.0 网关 172.25.250.254 DNS服务器 172.25.250.220 主机名 hostname  node1.domain250.example.com 1.解题vim &#x2F;etc&#x2F;NetworkManag">
+<meta property="og:type" content="article">
+<meta property="og:title" content="RHCSA解题">
+<meta property="og:url" content="http://example.com/2024/05/10/RHCSA%E8%A7%A3%E9%A2%98/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="1. 配置网络设置主机名：node1.domain250.example.com IP 地址：172.25.250.100 子网掩码 255.255.255.0 网关 172.25.250.254 DNS服务器 172.25.250.220 主机名 hostname  node1.domain250.example.com 1.解题vim &#x2F;etc&#x2F;NetworkManag">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2024-05-10T02:17:11.000Z">
+<meta property="article:modified_time" content="2024-12-10T02:17:47.895Z">
+<meta property="article:author" content="HWW">
+<meta property="article:tag" content="linux">
+<meta property="article:tag" content="考证">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://example.com/2024/05/10/RHCSA%E8%A7%A3%E9%A2%98/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>RHCSA解题 | Hexo</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Hexo</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">Do not go gentle into that good night</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>标签</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>日程表</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/10/RHCSA%E8%A7%A3%E9%A2%98/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+      <meta itemprop="name" content="HWW">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          RHCSA解题
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-05-10 10:17:11" itemprop="dateCreated datePublished" datetime="2024-05-10T10:17:11+08:00">2024-05-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-10 10:17:47" itemprop="dateModified" datetime="2024-12-10T10:17:47+08:00">2024-12-10</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <meta name="referrer" content="no-referrer">
+
+<h1 id="1-配置网络设置"><a href="#1-配置网络设置" class="headerlink" title="1. 配置网络设置"></a>1. 配置网络设置</h1><p>主机名：node1.domain250.example.com</p>
+<p>IP 地址：172.25.250.100</p>
+<p>子网掩码 255.255.255.0</p>
+<p>网关 172.25.250.254</p>
+<p>DNS服务器 172.25.250.220</p>
+<p>主机名 hostname  node1.domain250.example.com</p>
+<h2 id="1-解题"><a href="#1-解题" class="headerlink" title="1.解题"></a><strong>1.解题</strong></h2><p>vim &#x2F;etc&#x2F;NetworkManager&#x2F;system-connections&#x2F;Wired\ connection\ 1.nmconnection</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[ipv4]</span><br><span class="line">[connection]</span><br><span class="line">...</span><br><span class="line">autoconnect=true</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">[ethernet]</span><br><span class="line"></span><br><span class="line">[ipv4]</span><br><span class="line">address1=172.25.250.100/24,172.25.250.254</span><br><span class="line">dns=172.25.250.220;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+
+<p>nmcli con reload</p>
+<p>nmcli connection up  Wired\ connection\ 1</p>
+<p>hostnamectl hostname node1.domain250.example.com</p>
+<h1 id="2-配置您的系统以使用默认存储库"><a href="#2-配置您的系统以使用默认存储库" class="headerlink" title="2. 配置您的系统以使用默认存储库"></a>2. 配置您的系统以使用默认存储库</h1><p>YUM 存储库已可以从 <a target="_blank" rel="noopener" href="http://content/rhel9.0/x86_64/dvd/BaseOS%E5%92%8Chttp://content/rhel9.0/x86_64/dvd/AppStream%60">http://content/rhel9.0/x86_64/dvd/BaseOS和http://content/rhel9.0/x86_64/dvd/AppStream`</a> 使用配置您的系统，以将这些位置用作默认存储库</p>
+<h2 id="2-解决"><a href="#2-解决" class="headerlink" title="2.解决"></a><strong>2.解决</strong></h2><p>vim &#x2F;etc&#x2F;yum.repos.d&#x2F;redhathewenwei.repo</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">[baseos]</span><br><span class="line">name=BaseOS</span><br><span class="line">baseurl=http://content/rhel9.0/x86_64/dvd/BaseOS</span><br><span class="line">gpgcheck=false   #或 gpgcheck=0</span><br><span class="line"></span><br><span class="line">[appstream]</span><br><span class="line">name=AppStream</span><br><span class="line">baseurl=http://content/rhel9.0/x86_64/dvd/AppStream</span><br><span class="line">gpgcheck=false</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+<h1 id="3-调试-SELinux"><a href="#3-调试-SELinux" class="headerlink" title="3. 调试 SELinux ???"></a>3. 调试 SELinux ???</h1><p>非标准端口 <code>82</code> 上运行的 Web 服务器在提供内容时遇到问题。根据需要调试并解决问题，使其满足以下条件：</p>
+<p>1.系统上的Web 服务器能够提供 <code>/var/www/html</code> 中所有现有的 HTML 文件（注：不要删除或以其他方式改动现有的文件内容）</p>
+<p>\2. Web 服务器在端口 <code>82</code> 上提供此内容</p>
+<p>\3. Web 服务器在系统启动时<code>自动启动</code></p>
+<h1 id="4-创建用户帐户"><a href="#4-创建用户帐户" class="headerlink" title="4. 创建用户帐户"></a>4. 创建用户帐户</h1><p><strong>创建用户帐户</strong></p>
+<p>创建下列用户、组和组成员资格：</p>
+<p>1.名为 <code>sysmgrs</code> 的组</p>
+<p>2.用户 <code>natasha</code> ，作为次要组从属于 <code>sysmgrs</code></p>
+<p>3.用户 <code>harry</code> ，作为次要组还从属于 <code>sysmgrs</code></p>
+<p>4.用户 <code>sarah</code> ，无权访问系统上的<code>交互式 shell</code> 且不是 <code>sysmgrs</code> 的成员</p>
+<p>5.<code>natasha</code> 和 <code>harry</code> 和 <code>sarah</code> 的密码应当都是 <code>flectrag</code></p>
+<h2 id="4-解题"><a href="#4-解题" class="headerlink" title="4.解题"></a><strong>4.解题</strong></h2><p># groupadd sysmgrs</p>
+<p># useradd -G sysmgrs natasha</p>
+<p># useradd -G sysmgrs harry</p>
+<p># cat &#x2F;etc&#x2F;passwd</p>
+<p># useradd -s &#x2F;sbin&#x2F;nologin sarah</p>
+<p># for i in natasha harry sarah; do</p>
+<p>echo flectrag | passwd –stdin</p>
+<h1 id="5-配置-cron-作业"><a href="#5-配置-cron-作业" class="headerlink" title="5.配置 cron 作业"></a>5.配置 cron 作业</h1><p>配置 <code>cron</code> 作业，以用户 <code>harry</code> 身份每天<code>14:23</code>分执行 <code>/usr/bin/echo hello</code></p>
+<h2 id="5-解题"><a href="#5-解题" class="headerlink" title="5.解题"></a><strong>5.解题</strong></h2><p>systemctl status crond</p>
+<p>crontab -e -u harry </p>
+<p>23 14 * * * &#x2F;usr&#x2F;bin&#x2F;echo hello</p>
+<p><strong>6.创建协作目录</strong></p>
+<p><strong>创建具有以下特征的协作目录 <code>/home/managers</code> ：</strong></p>
+<p>\1.  <code>/home/managers</code> 的组用权是 <code>sysmgrs</code></p>
+<p>\2. 目录应当可被 <code>sysmgrs</code> 的成员读取、写入和访问，但任何其他用户不具这些权限。（当然，root 用户有权访问系统上的所有文件和目录）</p>
+<p>\3. <code>/home/managers</code> 中创建的文件自动将组所有权设置到 <code>sysmgrs</code> 组</p>
+<h1 id="7-配置NTP"><a href="#7-配置NTP" class="headerlink" title="7.配置NTP"></a><strong>7.配置NTP</strong></h1><p>配置您的系统，使其成为 <code>materials.example.com</code> 的 NTP 客户端。（注：<code>materials.example.com</code> 是 <code>classroom.example.com</code> 的 DNS 别名）</p>
+<h2 id="7-解题"><a href="#7-解题" class="headerlink" title="7.解题"></a><strong>7.解题</strong></h2><p>确认服务名称</p>
+<p>systemctl list-units | grep NTP</p>
+<p>systemctl status chronyd</p>
+<p>vim &#x2F;etc&#x2F;chrony.conf</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">server materials.example.com iburst</span><br></pre></td></tr></table></figure>
+
+<p>systemctl restart chronyd</p>
+<p>systemctl enable chronyd</p>
+<h1 id="8-配置-autofs"><a href="#8-配置-autofs" class="headerlink" title="8. 配置 autofs ???"></a><strong>8. 配置 autofs ???</strong></h1><p>配置 <code>autofs</code> ，以按照如下所述自动挂载远程用户的主目录：</p>
+<p>\1. <code>materials.example.com</code> ( <code>172.25.254.254</code> ) NFS 导出 <code>/rhome</code> 到您的系统。此文件系统包含为用户 <code>remoteuser1</code> 预配置的主目录</p>
+<p>\2. <code>remoteuser1</code> 的主目录是 <code>materials.example.com:/rhome/remoteuser1</code></p>
+<p>3.<code>remoteuser1</code> 的主目录应自动挂载到本地 <code>/rhome</code> 下的 <code>/rhome/remoteuser1</code></p>
+<p>\4. 主目录必须可供其用户<code>写入</code></p>
+<p>5.<code>remoteuser1</code> 的密码是 <code>flectrag</code></p>
+<h1 id="9-配置用户帐号"><a href="#9-配置用户帐号" class="headerlink" title="9.配置用户帐号"></a>9.配置用户帐号</h1><p>配置用户 <code>manalo</code> ，其用户 ID 为 <code>3533</code>。此用户的密码应当为 <code>flectrag</code>。</p>
+<h2 id="9-解题"><a href="#9-解题" class="headerlink" title="9.解题"></a><strong>9.解题</strong></h2><p>useradd -u 3533 manalo</p>
+<p>echo flectrag | passwd –stdin manalo</p>
+<p>ssh manalo@localhost id</p>
+<h1 id="10-查找文件"><a href="#10-查找文件" class="headerlink" title="10. 查找文件"></a>10. 查找文件</h1><p>查找归 <code>jacques</code> 所有的所有文件并将其副本放入 <code>/root/findfiles</code> 目录</p>
+<h2 id="10-解题"><a href="#10-解题" class="headerlink" title="10.解题"></a><strong>10.解题</strong></h2><p>mkdir &#x2F;root&#x2F;findfiles</p>
+<p>find &#x2F; -user jacques -exec cp -a {} &#x2F;root&#x2F;findfiles ;</p>
+<h1 id="11-查找字符串"><a href="#11-查找字符串" class="headerlink" title="11. 查找字符串"></a>11. 查找字符串</h1><p>1.查找文件 <code>/usr/share/xml/iso-codes/iso_639_3.xml</code> 中包含字符串 <code>ng</code> 的所有行。</p>
+<p>2.将所有这些行的副本按原始顺序放在文件 <code>/root/list</code> 中。</p>
+<p>\3. <code>/root/list</code> 不得包含空行，且所有行必须是 <code>/usr/share/xml/iso-codes/iso_639_3.xml</code> 中原始行的确切副本。</p>
+<h2 id="11-解题"><a href="#11-解题" class="headerlink" title="11.解题"></a><strong>11.解题</strong></h2><p>grep ng &#x2F;usr&#x2F;share&#x2F;xml&#x2F;iso-codes&#x2F;iso_639_3.xml &gt; &#x2F;root&#x2F;list</p>
+<h1 id="12-创建存档"><a href="#12-创建存档" class="headerlink" title="12. 创建存档"></a>12. 创建存档</h1><p>1.创建一个名为 <code>/root/backup.tar</code> 的 tar 存档，</p>
+<p>2.其应包含 <code>/usr/local</code> 的 tar 存档，其应包含 <code>/usr/local</code> 的内容。该 tar 存档必须使用 bzip2 进行压缩  </p>
+<h2 id="12解题"><a href="#12解题" class="headerlink" title="12解题"></a><strong>12解题</strong></h2><p>tar -cvjf &#x2F;root&#x2F;backup.tar &#x2F;usr&#x2F;local</p>
+<p>list,查看包文件内容</p>
+<p># tar -tf &#x2F;root&#x2F;backup.tar</p>
+<h1 id="13-创建一个容器镜像"><a href="#13-创建一个容器镜像" class="headerlink" title="13.  创建一个容器镜像"></a><strong>13.  创建一个容器镜像</strong></h1><p><code>wallah</code> 用户，下载 <a target="_blank" rel="noopener" href="http://classroom/Containerfile">http://classroom/Containerfile</a></p>
+<p> 不要修改这个文件内容，构建镜像名为 <code>pdf</code></p>
+<h1 id="14-将容器配置为服务"><a href="#14-将容器配置为服务" class="headerlink" title="14. 将容器配置为服务"></a>14. 将容器配置为服务</h1><p>1.<code>wallah</code> 用户，配置一个 systemd 服务</p>
+<p>\2. 容器名称为<code>ascii2pdf</code></p>
+<p>3.使用刚创建的镜像<code>pdf</code></p>
+<p>\4. 该服务命名为 <code>container-ascii2pdf</code> ，并在系统重启时自动启动，无需干预</p>
+<p>\5. 将服务配置为在启动时自动将   <code>/opt/file</code> 挂载到容器中的 <code>/dir1</code> 下；<code>/opt/progress</code> 挂载到容器中的 <code>/dir2</code> 下；</p>
+<h1 id="15-添加sudo免密操作"><a href="#15-添加sudo免密操作" class="headerlink" title="15. 添加sudo免密操作"></a>15. 添加sudo免密操作</h1><p>允许<code>sysmgrs</code>组成员sudo时不需要密码</p>
+<h2 id="15-解题"><a href="#15-解题" class="headerlink" title="15.解题"></a><strong>15.解题</strong></h2><p>visudo</p>
+<p># %wheel        ALL&#x3D;(ALL)       NOPASSWD: ALL</p>
+<p>%sysmgrs        ALL&#x3D;(ALL)       NOPASSWD: ALL</p>
+<h1 id="在-node2-domain250-example-com-上执行以下任务（RH134）"><a href="#在-node2-domain250-example-com-上执行以下任务（RH134）" class="headerlink" title="在 node2.domain250.example.com 上执行以下任务（RH134）"></a><strong>在 node2.domain250.example.com 上执行以下任务（RH134）</strong></h1><h1 id="16-设置-root-密码"><a href="#16-设置-root-密码" class="headerlink" title="16. 设置 root 密码"></a>16. 设置 root 密码</h1><p>将 node2 的 root 密码设置为 <code>flectrag</code> 。您需要获得系统访问权限才能进行此操作。</p>
+<h1 id="17-配置您的系统以使用默认存储库"><a href="#17-配置您的系统以使用默认存储库" class="headerlink" title="17. 配置您的系统以使用默认存储库"></a>17. <strong>配置您的系统以使用默认存储库</strong></h1><p>YUM 存储库已可以从 <code>http://content/rhel9.0/x86_64/dvd/BaseOS</code> 和 <code>http://content/rhel9.0/x86_64/dvd/AppStream</code> 使用配置您的系统，以将这些位置用作默认存储库</p>
+<h2 id="17-解题"><a href="#17-解题" class="headerlink" title="17.解题"></a><strong>17.解题</strong></h2><p>scp root@node1:&#x2F;etc&#x2F;yum.repos.d&#x2F;*.repo &#x2F;etc&#x2F;yum.repos.d&#x2F;</p>
+<h1 id="17-调整逻辑卷大小"><a href="#17-调整逻辑卷大小" class="headerlink" title="17. 调整逻辑卷大小"></a>17. 调整逻辑卷大小</h1><p>将逻辑卷 <code>vo</code> 及其文件系统的大小调整到 <code>230</code> MiB。确保文件系统内容保持不变。注：分区大小很少与请求的大小完全相同，因此可以接受范围为 <code>213</code> MiB 到 <code>243</code> MiB 的大小</p>
+<h1 id="18-添加交换分区"><a href="#18-添加交换分区" class="headerlink" title="18. 添加交换分区"></a>18. 添加交换分区</h1><p>向您的系统添加一个额外的交换分区 <code>512MiB</code> 。交换分区应在系统<code>启动时自动挂载</code>。不要删除或以任何方式改动系统上的任何现有交换分区</p>
+<h1 id="19-创建逻辑卷"><a href="#19-创建逻辑卷" class="headerlink" title="19. 创建逻辑卷"></a><strong>19. 创建逻辑卷</strong></h1><p>根据如下要求，创建新的逻辑卷：</p>
+<p>1.逻辑卷取名为 <code>qa</code> ，属于 <code>qagroup卷组，大小为 </code>60&#96; 个扩展块</p>
+<p>2.<code>qagroup</code> 卷组中逻辑卷的扩展块大小应当为 <code>16 MiB</code></p>
+<p>3.使用 <code>vfat</code> 文件系统格式化新逻辑卷。该逻辑卷应在系统启动时自动挂载到 <code>/mnt/qa</code> 下</p>
+<h1 id="20-配置系统调优"><a href="#20-配置系统调优" class="headerlink" title="20. 配置系统调优"></a>20. 配置系统调优</h1><p>为您的系统选择建议的 <code>tuned</code> 配置集并将它设为默认设置</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/linux/" rel="tag"># linux</a>
+              <a href="/tags/%E8%80%83%E8%AF%81/" rel="tag"># 考证</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/04/28/%E5%88%B6%E4%BD%9C%E7%A6%BB%E7%BA%BFyum%E6%BA%90%EF%BC%88unzip%EF%BC%89/" rel="prev" title="制作离线yum源（unzip）">
+      <i class="fa fa-chevron-left"></i> 制作离线yum源（unzip）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2024/05/10/%E4%BF%AE%E6%94%B9redis%E9%85%8D%E7%BD%AE%E5%86%85%E5%AD%98/" rel="next" title="修改redis配置内存">
+      修改redis配置内存 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1-%E9%85%8D%E7%BD%AE%E7%BD%91%E7%BB%9C%E8%AE%BE%E7%BD%AE"><span class="nav-number">1.</span> <span class="nav-text">1. 配置网络设置</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-%E8%A7%A3%E9%A2%98"><span class="nav-number">1.1.</span> <span class="nav-text">1.解题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2-%E9%85%8D%E7%BD%AE%E6%82%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E4%BB%A5%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">2. 配置您的系统以使用默认存储库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#2-%E8%A7%A3%E5%86%B3"><span class="nav-number">2.1.</span> <span class="nav-text">2.解决</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3-%E8%B0%83%E8%AF%95-SELinux"><span class="nav-number">3.</span> <span class="nav-text">3. 调试 SELinux ???</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4-%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7%E5%B8%90%E6%88%B7"><span class="nav-number">4.</span> <span class="nav-text">4. 创建用户帐户</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#4-%E8%A7%A3%E9%A2%98"><span class="nav-number">4.1.</span> <span class="nav-text">4.解题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5-%E9%85%8D%E7%BD%AE-cron-%E4%BD%9C%E4%B8%9A"><span class="nav-number">5.</span> <span class="nav-text">5.配置 cron 作业</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%A7%A3%E9%A2%98"><span class="nav-number">5.1.</span> <span class="nav-text">5.解题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7-%E9%85%8D%E7%BD%AENTP"><span class="nav-number">6.</span> <span class="nav-text">7.配置NTP</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#7-%E8%A7%A3%E9%A2%98"><span class="nav-number">6.1.</span> <span class="nav-text">7.解题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8-%E9%85%8D%E7%BD%AE-autofs"><span class="nav-number">7.</span> <span class="nav-text">8. 配置 autofs ???</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9-%E9%85%8D%E7%BD%AE%E7%94%A8%E6%88%B7%E5%B8%90%E5%8F%B7"><span class="nav-number">8.</span> <span class="nav-text">9.配置用户帐号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#9-%E8%A7%A3%E9%A2%98"><span class="nav-number">8.1.</span> <span class="nav-text">9.解题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10-%E6%9F%A5%E6%89%BE%E6%96%87%E4%BB%B6"><span class="nav-number">9.</span> <span class="nav-text">10. 查找文件</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#10-%E8%A7%A3%E9%A2%98"><span class="nav-number">9.1.</span> <span class="nav-text">10.解题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#11-%E6%9F%A5%E6%89%BE%E5%AD%97%E7%AC%A6%E4%B8%B2"><span class="nav-number">10.</span> <span class="nav-text">11. 查找字符串</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E8%A7%A3%E9%A2%98"><span class="nav-number">10.1.</span> <span class="nav-text">11.解题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#12-%E5%88%9B%E5%BB%BA%E5%AD%98%E6%A1%A3"><span class="nav-number">11.</span> <span class="nav-text">12. 创建存档</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#12%E8%A7%A3%E9%A2%98"><span class="nav-number">11.1.</span> <span class="nav-text">12解题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#13-%E5%88%9B%E5%BB%BA%E4%B8%80%E4%B8%AA%E5%AE%B9%E5%99%A8%E9%95%9C%E5%83%8F"><span class="nav-number">12.</span> <span class="nav-text">13.  创建一个容器镜像</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#14-%E5%B0%86%E5%AE%B9%E5%99%A8%E9%85%8D%E7%BD%AE%E4%B8%BA%E6%9C%8D%E5%8A%A1"><span class="nav-number">13.</span> <span class="nav-text">14. 将容器配置为服务</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#15-%E6%B7%BB%E5%8A%A0sudo%E5%85%8D%E5%AF%86%E6%93%8D%E4%BD%9C"><span class="nav-number">14.</span> <span class="nav-text">15. 添加sudo免密操作</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#15-%E8%A7%A3%E9%A2%98"><span class="nav-number">14.1.</span> <span class="nav-text">15.解题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9C%A8-node2-domain250-example-com-%E4%B8%8A%E6%89%A7%E8%A1%8C%E4%BB%A5%E4%B8%8B%E4%BB%BB%E5%8A%A1%EF%BC%88RH134%EF%BC%89"><span class="nav-number">15.</span> <span class="nav-text">在 node2.domain250.example.com 上执行以下任务（RH134）</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#16-%E8%AE%BE%E7%BD%AE-root-%E5%AF%86%E7%A0%81"><span class="nav-number">16.</span> <span class="nav-text">16. 设置 root 密码</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-%E9%85%8D%E7%BD%AE%E6%82%A8%E7%9A%84%E7%B3%BB%E7%BB%9F%E4%BB%A5%E4%BD%BF%E7%94%A8%E9%BB%98%E8%AE%A4%E5%AD%98%E5%82%A8%E5%BA%93"><span class="nav-number">17.</span> <span class="nav-text">17. 配置您的系统以使用默认存储库</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#17-%E8%A7%A3%E9%A2%98"><span class="nav-number">17.1.</span> <span class="nav-text">17.解题</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#17-%E8%B0%83%E6%95%B4%E9%80%BB%E8%BE%91%E5%8D%B7%E5%A4%A7%E5%B0%8F"><span class="nav-number">18.</span> <span class="nav-text">17. 调整逻辑卷大小</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#18-%E6%B7%BB%E5%8A%A0%E4%BA%A4%E6%8D%A2%E5%88%86%E5%8C%BA"><span class="nav-number">19.</span> <span class="nav-text">18. 添加交换分区</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#19-%E5%88%9B%E5%BB%BA%E9%80%BB%E8%BE%91%E5%8D%B7"><span class="nav-number">20.</span> <span class="nav-text">19. 创建逻辑卷</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#20-%E9%85%8D%E7%BD%AE%E7%B3%BB%E7%BB%9F%E8%B0%83%E4%BC%98"><span class="nav-number">21.</span> <span class="nav-text">20. 配置系统调优</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="HWW"
+      src="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+  <p class="site-author-name" itemprop="name">HWW</p>
+  <div class="site-description" itemprop="description">Do not go gentle into that good night</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HWW</span>
+</div>
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a> 强力驱动
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
