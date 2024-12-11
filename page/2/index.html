@@ -212,6 +212,93 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/20/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E9%98%B2%E7%81%AB%E5%A2%99%E8%81%94%E5%8A%A8%EF%BC%88%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%96%B9%E5%BC%8F%EF%BC%89/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/%E5%A4%B4%E5%83%8F/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20240925172832.jpg">
+      <meta itemprop="name" content="HWW">
+      <meta itemprop="description" content="Do not go gentle into that good night">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Hexo">
+    </span>
+      <header class="post-header">
+        <h2 class="post-title" itemprop="name headline">
+          
+            <a href="/2024/05/20/%E6%B7%B1%E4%BF%A1%E6%9C%8D%E9%98%B2%E7%81%AB%E5%A2%99%E8%81%94%E5%8A%A8%EF%BC%88%E6%9C%BA%E5%99%A8%E4%BA%BA%E6%96%B9%E5%BC%8F%EF%BC%89/" class="post-title-link" itemprop="url">深信服防火墙联动（机器人方式）</a>
+        </h2>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2024-05-20 10:18:54" itemprop="dateCreated datePublished" datetime="2024-05-20T10:18:54+08:00">2024-05-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-10 10:19:43" itemprop="dateModified" datetime="2024-12-10T10:19:43+08:00">2024-12-10</time>
+              </span>
+
+          <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>286</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+          <meta name="referrer" content="no-referrer">
+
+<h1 id="1-防火墙信息："><a href="#1-防火墙信息：" class="headerlink" title="1.防火墙信息："></a><strong>1.防火墙信息：</strong></h1><p>深信服防火墙</p>
+<p>版本号:8.0.26</p>
+<p>不支持API方式</p>
+<h1 id="2-服务器依赖安装和环境："><a href="#2-服务器依赖安装和环境：" class="headerlink" title="2.服务器依赖安装和环境："></a><strong>2.服务器依赖安装和环境：</strong></h1><p>ps:如果是集群，每台都要这样的环境：2.1 2.2</p>
+<h2 id="2-1-创建缓存文件"><a href="#2-1-创建缓存文件" class="headerlink" title="2.1 创建缓存文件"></a><strong>2.1 创建缓存文件</strong></h2><p>mkdir -p &#x2F;data&#x2F;scripts&#x2F;cache&#x2F;</p>
+<h2 id="2-2python3-6-8安装方式"><a href="#2-2python3-6-8安装方式" class="headerlink" title="2.2python3.6.8安装方式"></a><strong>2.2python3.6.8安装方式</strong></h2><p><a target="_blank" rel="noopener" href="https://alidocs.dingtalk.com/document/edit?biz_ver=10&corpId=ding157f218c888a3441ee0f45d8e4f7c288&dd_close=false&dd_user_keyboard=false&dentryKey=kZMaG288iEoJXkZL&dontjump=true&dt_editor_toolbar=true&rnd=0.4149816376720521&type=m&utm_medium=main_vertical&utm_source=search#">离线yum源 配置安装python3 导入模块.adoc</a></p>
+<h2 id="2-3-selenuim依赖导入"><a href="#2-3-selenuim依赖导入" class="headerlink" title="2.3 selenuim依赖导入"></a><strong>2.3 selenuim依赖导入</strong></h2><h2 id="2-4-主机这台安装docker启动seleuium镜像"><a href="#2-4-主机这台安装docker启动seleuium镜像" class="headerlink" title="2.4 主机这台安装docker启动seleuium镜像"></a><strong>2.4 主机这台安装docker启动seleuium镜像</strong></h2><h1 id="3-剧本脚本"><a href="#3-剧本脚本" class="headerlink" title="3.剧本脚本"></a><strong>3.剧本脚本</strong></h1><h2 id="3-1放行脚本"><a href="#3-1放行脚本" class="headerlink" title="3.1放行脚本"></a><strong>3.1放行脚本</strong></h2><h2 id="3-2白名单脚本"><a href="#3-2白名单脚本" class="headerlink" title="3.2白名单脚本"></a><strong>3.2白名单脚本</strong></h2><h2 id="3-3查询脚本"><a href="#3-3查询脚本" class="headerlink" title="3.3查询脚本"></a><strong>3.3查询脚本</strong></h2><h2 id="3-4拦截脚本"><a href="#3-4拦截脚本" class="headerlink" title="3.4拦截脚本"></a><strong>3.4拦截脚本</strong></h2><h1 id="4-在主机转发流量"><a href="#4-在主机转发流量" class="headerlink" title="4.在主机转发流量"></a><strong>4.在主机转发流量</strong></h1><p>ssh -gL 5541:防火墙IP:网页端口 localhost</p>
+
+      
+    </div>
+
+    
+    
+    
+      <footer class="post-footer">
+        <div class="post-eof"></div>
+      </footer>
+  </article>
+  
+  
+  
+
+      
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
     <link itemprop="mainEntityOfPage" href="http://example.com/2024/05/10/%E4%BF%AE%E6%94%B9redis%E9%85%8D%E7%BD%AE%E5%86%85%E5%AD%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1178,7 +1265,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">19</span>
+          <span class="site-state-item-count">20</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
