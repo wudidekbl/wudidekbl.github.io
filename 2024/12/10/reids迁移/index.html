@@ -27,19 +27,19 @@
 <meta property="og:site_name" content="Hexo">
 <meta property="og:description" content="迁移redis文件前先备份redis文件位置&#x2F;usr&#x2F;local&#x2F;redis-4.0.11&#x2F; &#x2F;etc&#x2F;redis&#x2F; &#x2F;usr&#x2F;local&#x2F;bin &#x2F;etc&#x2F;init.d&#x2F;redis redis依赖的文件迁移好了，就可以启动reids了redis启动方式&#x2F;">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/a15f5ed3-c16e-4614-8678-7b2224c30720.png">
-<meta property="og:image" content="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/b1e6cfe4-ca58-421d-a327-9e4a30a90a2b.png">
-<meta property="og:image" content="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/2d95f47a-1385-4f5a-bec4-e50b6c02e967.png">
-<meta property="og:image" content="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/f04c0d01-e36b-46f7-b325-2e241ef230b2.png">
-<meta property="og:image" content="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/0132066b-f731-4a72-802b-505a8593c647.png">
-<meta property="og:image" content="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/3d216160-8e91-458d-a6d3-5077c47bb166.png">
+<meta property="og:image" content="http://example.com/images/reids%E8%BF%81%E7%A7%BB/a15f5ed3-c16e-4614-8678-7b2224c30720.png">
+<meta property="og:image" content="http://example.com/images/reids%E8%BF%81%E7%A7%BB/b1e6cfe4-ca58-421d-a327-9e4a30a90a2b.png">
+<meta property="og:image" content="http://example.com/images/reids%E8%BF%81%E7%A7%BB/2d95f47a-1385-4f5a-bec4-e50b6c02e967.png">
+<meta property="og:image" content="http://example.com/images/reids%E8%BF%81%E7%A7%BB/f04c0d01-e36b-46f7-b325-2e241ef230b2.png">
+<meta property="og:image" content="http://example.com/images/reids%E8%BF%81%E7%A7%BB/0132066b-f731-4a72-802b-505a8593c647.png">
+<meta property="og:image" content="http://example.com/images/reids%E8%BF%81%E7%A7%BB/3d216160-8e91-458d-a6d3-5077c47bb166.png">
 <meta property="article:published_time" content="2024-12-10T02:21:08.000Z">
-<meta property="article:modified_time" content="2024-12-10T02:21:27.265Z">
+<meta property="article:modified_time" content="2024-12-12T02:33:33.994Z">
 <meta property="article:author" content="HWW">
 <meta property="article:tag" content="redis">
 <meta property="article:tag" content="数据库">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/a15f5ed3-c16e-4614-8678-7b2224c30720.png">
+<meta name="twitter:image" content="http://example.com/images/reids%E8%BF%81%E7%A7%BB/a15f5ed3-c16e-4614-8678-7b2224c30720.png">
 
 <link rel="canonical" href="http://example.com/2024/12/10/reids%E8%BF%81%E7%A7%BB/">
 
@@ -202,10 +202,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-12-10 10:21:08 / 修改时间：10:21:27" itemprop="dateCreated datePublished" datetime="2024-12-10T10:21:08+08:00">2024-12-10</time>
+              <time title="创建时间：2024-12-10 10:21:08" itemprop="dateCreated datePublished" datetime="2024-12-10T10:21:08+08:00">2024-12-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-12-12 10:33:33" itemprop="dateModified" datetime="2024-12-12T10:33:33+08:00">2024-12-12</time>
+              </span>
 
           <br>
             <span class="post-meta-item" title="本文字数">
@@ -213,7 +219,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>505</span>
+              <span>492</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -234,18 +240,17 @@
       
         <meta name="referrer" content="no-referrer">
 
-<h1 id="迁移redis文件前先备份"><a href="#迁移redis文件前先备份" class="headerlink" title="迁移redis文件前先备份"></a><strong>迁移redis文件前先备份</strong></h1><h1 id="redis文件位置"><a href="#redis文件位置" class="headerlink" title="redis文件位置"></a><strong>redis文件位置</strong></h1><h2 id="usr-local-redis-4-0-11"><a href="#usr-local-redis-4-0-11" class="headerlink" title="&#x2F;usr&#x2F;local&#x2F;redis-4.0.11&#x2F;"></a><strong>&#x2F;usr&#x2F;local&#x2F;redis-4.0.11&#x2F;</strong></h2><p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/a15f5ed3-c16e-4614-8678-7b2224c30720.png" alt="img"></p>
-<h2 id="etc-redis"><a href="#etc-redis" class="headerlink" title="&#x2F;etc&#x2F;redis&#x2F;"></a><strong>&#x2F;etc&#x2F;redis&#x2F;</strong></h2><p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/b1e6cfe4-ca58-421d-a327-9e4a30a90a2b.png" alt="img"></p>
-<h2 id="usr-local-bin"><a href="#usr-local-bin" class="headerlink" title="&#x2F;usr&#x2F;local&#x2F;bin"></a><strong>&#x2F;usr&#x2F;local&#x2F;bin</strong></h2><p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/2d95f47a-1385-4f5a-bec4-e50b6c02e967.png" alt="img"></p>
-<h2 id="etc-init-d-redis"><a href="#etc-init-d-redis" class="headerlink" title="&#x2F;etc&#x2F;init.d&#x2F;redis"></a><strong>&#x2F;etc&#x2F;init.d&#x2F;redis</strong></h2><p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/f04c0d01-e36b-46f7-b325-2e241ef230b2.png" alt="img"></p>
+<h1 id="迁移redis文件前先备份"><a href="#迁移redis文件前先备份" class="headerlink" title="迁移redis文件前先备份"></a><strong>迁移redis文件前先备份</strong></h1><h1 id="redis文件位置"><a href="#redis文件位置" class="headerlink" title="redis文件位置"></a><strong>redis文件位置</strong></h1><h2 id="usr-local-redis-4-0-11"><a href="#usr-local-redis-4-0-11" class="headerlink" title="&#x2F;usr&#x2F;local&#x2F;redis-4.0.11&#x2F;"></a><strong>&#x2F;usr&#x2F;local&#x2F;redis-4.0.11&#x2F;</strong></h2><p><img src="/images/reids%E8%BF%81%E7%A7%BB/a15f5ed3-c16e-4614-8678-7b2224c30720.png" alt="img"></p>
+<h2 id="etc-redis"><a href="#etc-redis" class="headerlink" title="&#x2F;etc&#x2F;redis&#x2F;"></a><strong>&#x2F;etc&#x2F;redis&#x2F;</strong></h2><p><img src="/images/reids%E8%BF%81%E7%A7%BB/b1e6cfe4-ca58-421d-a327-9e4a30a90a2b.png" alt="img"></p>
+<h2 id="usr-local-bin"><a href="#usr-local-bin" class="headerlink" title="&#x2F;usr&#x2F;local&#x2F;bin"></a><strong>&#x2F;usr&#x2F;local&#x2F;bin</strong></h2><p><img src="/images/reids%E8%BF%81%E7%A7%BB/2d95f47a-1385-4f5a-bec4-e50b6c02e967.png" alt="img"></p>
+<h2 id="etc-init-d-redis"><a href="#etc-init-d-redis" class="headerlink" title="&#x2F;etc&#x2F;init.d&#x2F;redis"></a><strong>&#x2F;etc&#x2F;init.d&#x2F;redis</strong></h2><p><img src="/images/reids%E8%BF%81%E7%A7%BB/f04c0d01-e36b-46f7-b325-2e241ef230b2.png" alt="img"></p>
 <h2 id="redis依赖的文件迁移好了，就可以启动reids了"><a href="#redis依赖的文件迁移好了，就可以启动reids了" class="headerlink" title="redis依赖的文件迁移好了，就可以启动reids了"></a><strong>redis依赖的文件迁移好了，就可以启动reids了</strong></h2><h1 id="redis启动方式"><a href="#redis启动方式" class="headerlink" title="redis启动方式"></a><strong>redis启动方式</strong></h1><p>&#x2F;etc&#x2F;init.d&#x2F;redis start </p>
 <p>由于没有redis移动到另一台，另外一台需要使用启动文件启动，不能使用systemctl start redis启动</p>
 <p>.&#x2F;etc&#x2F;init.d&#x2F;redis start </p>
 <p><strong>检查redis启动是否正常</strong></p>
 <p>检查6937端口和redis进程是否存在</p>
-<h1 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a><strong>修改配置文件</strong></h1><h3 id="1-etc-redis-redis-conf"><a href="#1-etc-redis-redis-conf" class="headerlink" title="1.&#x2F;etc&#x2F;redis&#x2F;redis.conf"></a><strong>1.&#x2F;etc&#x2F;redis&#x2F;redis.conf</strong></h3><p>修改到迁移的那台的ip地址</p>
-<p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/0132066b-f731-4a72-802b-505a8593c647.png" alt="img"></p>
-<h2 id="以下组件只要做了集群，都要去修改集群的组件配置文件"><a href="#以下组件只要做了集群，都要去修改集群的组件配置文件" class="headerlink" title="以下组件只要做了集群，都要去修改集群的组件配置文件"></a><strong>以下组件只要做了集群，都要去修改集群的组件配置文件</strong></h2><p><img src="https://alidocs.oss-cn-zhangjiakou.aliyuncs.com/res/Mp7ldVGGRLEaqBQN/img/3d216160-8e91-458d-a6d3-5077c47bb166.png" alt="img"></p>
+<h1 id="修改配置文件"><a href="#修改配置文件" class="headerlink" title="修改配置文件"></a><strong>修改配置文件</strong></h1><h3 id="1-etc-redis-redis-conf"><a href="#1-etc-redis-redis-conf" class="headerlink" title="1.&#x2F;etc&#x2F;redis&#x2F;redis.conf"></a><strong>1.&#x2F;etc&#x2F;redis&#x2F;redis.conf</strong></h3><p><img src="/images/reids%E8%BF%81%E7%A7%BB/0132066b-f731-4a72-802b-505a8593c647.png" alt="img"></p>
+<h2 id="以下组件只要做了集群，都要去修改集群的组件配置文件"><a href="#以下组件只要做了集群，都要去修改集群的组件配置文件" class="headerlink" title="以下组件只要做了集群，都要去修改集群的组件配置文件"></a><strong>以下组件只要做了集群，都要去修改集群的组件配置文件</strong></h2><p><img src="/images/reids%E8%BF%81%E7%A7%BB/3d216160-8e91-458d-a6d3-5077c47bb166.png" alt="img"></p>
 <h3 id="2-astroable的配置文件"><a href="#2-astroable的配置文件" class="headerlink" title="2.astroable的配置文件"></a><strong>2.astroable的配置文件</strong></h3><h3 id="3-edm的配置文件"><a href="#3-edm的配置文件" class="headerlink" title="3.edm的配置文件"></a><strong>3.edm的配置文件</strong></h3><h3 id="4-wormhole的配置文件"><a href="#4-wormhole的配置文件" class="headerlink" title="4.wormhole的配置文件"></a><strong>4.wormhole的配置文件</strong></h3><h1 id="最后修改配置host-ini的redis的ip地址，便于维护"><a href="#最后修改配置host-ini的redis的ip地址，便于维护" class="headerlink" title="最后修改配置host.ini的redis的ip地址，便于维护"></a><strong>最后修改配置host.ini的redis的ip地址，便于维护</strong></h1>
     </div>
 
@@ -265,8 +270,8 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/12/09/test/" rel="prev" title="test">
-      <i class="fa fa-chevron-left"></i> test
+    <a href="/2024/12/09/%E7%88%AC%E8%99%AB%E6%8E%92%E6%9F%A5%E6%96%B9%E5%BC%8F/" rel="prev" title="爬虫排查方式">
+      <i class="fa fa-chevron-left"></i> 爬虫排查方式
     </a></div>
       <div class="post-nav-item">
     <a href="/2024/12/10/%E6%BC%8F%E6%B4%9E%E5%A4%8D%E7%8E%B0/" rel="next" title="漏洞复现">
@@ -346,14 +351,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">16</span>
+        <span class="site-state-item-count">17</span>
         <span class="site-state-item-name">标签</span></a>
       </div>
   </nav>
